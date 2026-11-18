@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { galleryItems, galleryCategories, GalleryItem } from '@/data/gallery';
 import { projectData } from '@/data/project';
+import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -159,6 +160,9 @@ export default function GalleryPage() {
           </button>
         </div>
       )}
+
+      {/* NexHouz watermark in natural whitespace */}
+      <NexHouzWatermark />
 
       {/* Footer CTA */}
       <section className="bg-charcoal text-white py-16 text-center">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { projectData } from '@/data/project';
+import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Thukkuguda Villas',
@@ -20,6 +21,9 @@ export default function PrivacyPolicyPage() {
           </p>
         </div>
       </section>
+
+      {/* NexHouz watermark in natural whitespace */}
+      <NexHouzWatermark />
 
       <section className="py-16 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="space-y-10 text-sm sm:text-base text-charcoal/70 leading-relaxed">

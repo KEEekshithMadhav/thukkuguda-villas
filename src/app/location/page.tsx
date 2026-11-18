@@ -13,6 +13,7 @@ import {
 import { locationHighlights } from '@/data/location';
 import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
+import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export const metadata: Metadata = {
   title: 'Location & Connectivity | Thukkuguda Villas – South Hyderabad',
@@ -118,6 +119,9 @@ export default function LocationPage() {
           })}
         </div>
       </section>
+
+      {/* NexHouz watermark in natural whitespace */}
+      <NexHouzWatermark />
 
       {/* South Hyderabad Narrative */}
       <section className="py-20 bg-stone border-y border-softgrey">

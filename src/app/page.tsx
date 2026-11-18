@@ -9,6 +9,7 @@ import Amenities from '@/components/sections/Amenities';
 import ArchitecturalGallery from '@/components/sections/ArchitecturalGallery';
 import LocationSection from '@/components/sections/LocationSection';
 import EnquirySection from '@/components/sections/EnquirySection';
+import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export default function HomePage() {
   return (
@@ -18,6 +19,9 @@ export default function HomePage() {
 
       {/* 2. Project Overview */}
       <ProjectOverview />
+
+      {/* Subtle NexHouz watermark in natural whitespace */}
+      <NexHouzWatermark />
 
       {/* 3. Project Highlights */}
       <Highlights />
@@ -30,6 +34,9 @@ export default function HomePage() {
 
       {/* 6. Master Plan Viewer */}
       <MasterPlan />
+
+      {/* Subtle NexHouz watermark in natural whitespace */}
+      <NexHouzWatermark />
 
       {/* 7. Amenities */}
       <Amenities />
