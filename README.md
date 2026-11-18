@@ -13,7 +13,6 @@
 | **Total Area** | 24 Acres |
 | **Total Villas** | 202 |
 | **Plot Sizes** | 267 – 400 Sq. Yds |
-| **Developer** | NexHouz |
 
 ---
 
