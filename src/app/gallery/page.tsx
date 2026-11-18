@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, ChevronLeft, ChevronRight, Eye, Phone, MessageCircle } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { galleryItems, galleryCategories, GalleryItem } from '@/data/gallery';
 import { projectData } from '@/data/project';
 
@@ -34,25 +34,25 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory text-charcoal pt-24 font-body">
+    <div className="min-h-screen bg-offwhite text-charcoal pt-16 font-body">
       {/* Header */}
-      <section className="bg-forest text-ivory py-20 relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">
-            VISUAL PORTFOLIO
+      <section className="bg-white border-b border-softgrey py-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <span className="text-xs uppercase tracking-[0.25em] text-taupe font-medium">
+            Visual Portfolio
           </span>
-          <h1 className="font-heading text-4xl sm:text-6xl font-bold mt-2 mb-4 text-ivory">
+          <h1 className="font-heading text-4xl sm:text-6xl font-semibold mt-3 mb-4 text-charcoal">
             Architectural Gallery
           </h1>
-          <p className="text-base sm:text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
-            Experience the design sensibilities, broad roadways, and serene landscape design planned across Thukkuguda Villas.
+          <p className="text-base sm:text-lg text-charcoal/50 max-w-2xl leading-relaxed font-body">
+            Villa elevations, the master site plan, and aerial location imagery from Thukkuguda Villas.
           </p>
         </div>
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+      <section className="pt-10 pb-6 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex flex-wrap items-center gap-0 border-b border-softgrey">
           {galleryCategories.map((category) => {
             const isActive = category.id === activeCategory;
             return (
@@ -62,10 +62,10 @@ export default function GalleryPage() {
                   setActiveCategory(category.id);
                   setLightboxIndex(null);
                 }}
-                className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all border ${
+                className={`px-5 py-3 text-sm font-body font-medium transition-all border-b-2 -mb-px ${
                   isActive
-                    ? 'bg-forest text-gold border-gold shadow-md'
-                    : 'bg-white text-charcoal/70 border-gold/30 hover:border-gold hover:text-charcoal'
+                    ? 'text-charcoal border-charcoal'
+                    : 'text-charcoal/40 border-transparent hover:text-charcoal/70'
                 }`}
               >
                 {category.label}
@@ -76,39 +76,24 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="pb-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-forest border border-gold/30 shadow-md cursor-pointer hover:shadow-2xl transition-all duration-300"
+              className="group relative overflow-hidden aspect-[4/3] bg-stone cursor-pointer"
             >
               <Image
                 src={item.src}
                 alt={item.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
-
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-gold">
-                    {item.category}
-                  </span>
-                  <h3 className="font-heading text-lg font-semibold text-ivory mt-0.5">
-                    {item.title}
-                  </h3>
-                  {item.description && (
-                    <p className="text-xs text-ivory/70 line-clamp-1 mt-1">
-                      {item.description}
-                    </p>
-                  )}
-                </div>
-                <div className="w-9 h-9 rounded-full bg-gold/20 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-charcoal transition-colors flex-shrink-0">
-                  <Eye className="w-4 h-4" />
-                </div>
+              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-charcoal/70 to-transparent">
+                <p className="text-white text-sm font-medium font-body">{item.title}</p>
               </div>
             </div>
           ))}
@@ -118,75 +103,74 @@ export default function GalleryPage() {
       {/* Lightbox Modal */}
       {currentItem && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-charcoal/97 flex items-center justify-center p-4"
           onClick={() => setLightboxIndex(null)}
         >
-          {/* Close Button */}
           <button
             onClick={() => setLightboxIndex(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-ivory hover:bg-gold hover:text-charcoal transition-colors z-50"
-            aria-label="Close Lightbox"
+            className="absolute top-5 right-5 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Close"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           </button>
 
-          {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-ivory hover:bg-gold hover:text-charcoal transition-colors z-50"
-            aria-label="Previous image"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-ivory hover:bg-gold hover:text-charcoal transition-colors z-50"
-            aria-label="Next image"
-          >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
 
-          {/* Lightbox Content */}
           <div
-            className="max-w-4xl w-full flex flex-col items-center"
+            className="max-w-5xl w-full flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full aspect-[16/10] bg-forest rounded-2xl overflow-hidden border border-gold/40 shadow-2xl">
+            <div className="relative w-full aspect-[16/10] bg-charcoal">
               <Image
                 src={currentItem.src}
                 alt={currentItem.title}
                 fill
-                className="object-contain p-4"
+                className="object-contain"
+                priority
               />
             </div>
-            <div className="mt-4 text-center text-ivory">
-              <span className="text-[11px] uppercase tracking-widest text-gold font-semibold">
+            <div className="mt-4 text-center">
+              <span className="text-[11px] uppercase tracking-[0.2em] text-taupe font-body">
                 {currentItem.category}
               </span>
-              <h2 className="font-heading text-2xl font-bold mt-1">
+              <h2 className="font-heading text-xl font-semibold text-white mt-1">
                 {currentItem.title}
               </h2>
               {currentItem.description && (
-                <p className="text-sm text-ivory/70 mt-1 max-w-lg mx-auto">
+                <p className="text-sm text-white/50 mt-1 max-w-lg mx-auto font-body">
                   {currentItem.description}
                 </p>
               )}
             </div>
           </div>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       )}
 
       {/* Footer CTA */}
-      <section className="bg-forest text-ivory py-16 border-t border-gold/20 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <h2 className="font-heading text-3xl font-bold">Experience the Space in Person</h2>
-          <p className="text-sm text-ivory/75">
-            Renderings provide context, but spatial scale is felt on site. Schedule an escorted visit along our 40-ft avenues.
+      <section className="bg-charcoal text-white py-16 text-center">
+        <div className="max-w-3xl mx-auto px-6 space-y-4">
+          <h2 className="font-heading text-3xl font-semibold">Experience the Space in Person</h2>
+          <p className="text-sm text-white/50 font-body">
+            Imagery provides context, but spatial scale is best felt on site. Schedule a guided visit.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-lg bg-gold text-charcoal font-semibold text-xs uppercase tracking-wider hover:bg-gold/90 transition-all"
+              className="px-7 py-3 bg-white text-charcoal text-sm font-medium hover:bg-offwhite transition-all"
             >
               Book Site Visit
             </Link>
@@ -194,10 +178,10 @@ export default function GalleryPage() {
               href={projectData.phone1.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg border border-emerald-500 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all text-xs font-semibold inline-flex items-center gap-2"
+              className="px-7 py-3 border border-emerald-500 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all text-sm font-medium inline-flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Inquiry</span>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>

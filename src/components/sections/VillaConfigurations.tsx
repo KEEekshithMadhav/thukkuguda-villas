@@ -1,96 +1,62 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { villaConfigurations } from '@/data/villas';
 
-export const VillaConfigurations: React.FC = () => {
+const VillaConfigurations: React.FC = () => {
   return (
-    <section id="villas" className="py-24 bg-beige/40 text-charcoal border-b border-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="VILLA CONFIGURATIONS"
-          title="Four Distinct Scales of Refined Living"
-          subtitle="Engineered with expansive floor-to-ceiling volumes, wide frontage setbacks, and functional layouts tailored to multi-generational living."
-          align="center"
-          className="mb-16"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {villaConfigurations.map((villa, index) => (
-            <motion.div
-              key={villa.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="flex flex-col bg-ivory rounded-2xl border border-gold/30 overflow-hidden shadow-lg hover:shadow-2xl hover:border-gold transition-all duration-300"
-            >
-              {/* Architectural Image */}
-              <div className="relative aspect-[4/3] bg-forest overflow-hidden">
-                <Image
-                  src={villa.image}
-                  alt={`${villa.plotSize} Villa Architectural Elevation`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 bg-forest/80 backdrop-blur-sm border border-gold/40 px-3 py-1 rounded text-[11px] font-semibold text-gold uppercase tracking-wider">
-                  Plot {villa.plotSize}
-                </div>
-              </div>
-
-              {/* Content Card Body */}
-              <div className="p-6 flex flex-col flex-grow justify-between space-y-6">
-                <div>
-                  <div className="border-b border-gold/20 pb-4 mb-4">
-                    <h3 className="font-heading text-2xl font-bold text-forest">
-                      {villa.plotSize}
-                    </h3>
-                    <p className="text-xs uppercase tracking-widest text-gold font-semibold mt-1">
-                      {villa.builtUpArea} Built-Up Area
-                    </p>
-                  </div>
-
-                  {/* Highlights */}
-                  <ul className="space-y-2 text-xs text-charcoal/80">
-                    {villa.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2">
-                        <Check className="w-3.5 h-3.5 text-forest flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Card CTA */}
-                <div className="pt-2">
-                  <a
-                    href="#enquiry"
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded text-xs font-semibold uppercase tracking-wider bg-forest text-ivory hover:bg-forest/90 transition-all"
-                  >
-                    <span>Enquire for this Villa</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-gold" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Global Action Link */}
-        <div className="text-center mt-12">
+    <section className="bg-stone py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <SectionHeading
+            eyebrow="Villa Types"
+            title="Four Configurations, One Standard of Excellence"
+          />
           <Link
             href="/villas"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:text-gold transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-taupe transition-colors whitespace-nowrap mb-4"
           >
-            <span>Compare all configurations and features on the Villas Page</span>
-            <ArrowRight className="w-4 h-4" />
+            View All Villas <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {villaConfigurations.map((villa) => (
+            <div key={villa.id} className="group bg-white overflow-hidden">
+              {/* Image */}
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <Image
+                  src={villa.image}
+                  alt={`${villa.plotSize} Villa`}
+                  fill
+                  className="object-cover group-hover:scale-103 transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="p-5 border-b border-softgrey">
+                <p className="text-xs text-taupe uppercase tracking-widest font-body mb-1">Plot Size</p>
+                <h3 className="font-heading text-2xl font-semibold text-charcoal">{villa.plotSize}</h3>
+                <div className="mt-3 pt-3 border-t border-softgrey">
+                  <p className="text-xs text-charcoal/50 uppercase tracking-widest font-body">Built-Up Area</p>
+                  <p className="text-sm font-medium text-charcoal mt-0.5">{villa.builtUpArea}</p>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="px-5 py-3">
+                <Link
+                  href={`/villas#${villa.id}`}
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-charcoal/60 hover:text-charcoal transition-colors"
+                >
+                  Explore <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

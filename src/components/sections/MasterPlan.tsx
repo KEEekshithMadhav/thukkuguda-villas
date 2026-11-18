@@ -2,89 +2,95 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Maximize2, Compass, Layers, Trees, Shield } from 'lucide-react';
+import { ZoomIn, X } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-export const MasterPlan: React.FC = () => {
-  const [isZoomed, setIsZoomed] = useState(false);
+const MasterPlan: React.FC = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
-    <section className="py-24 bg-forest text-ivory relative overflow-hidden border-b border-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="COMMUNITY LAYOUT"
-          title="The 24-Acre Master Plan"
-          subtitle="Engineered with 40-foot (12M) internal arterial avenues, a 1,986 Sq. Yds grand central clubhouse, and expansive green open space reserves (OSR)."
-          align="center"
-          light={true}
-          className="mb-12"
-        />
+    <section className="bg-offwhite py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text side */}
+          <div>
+            <SectionHeading
+              eyebrow="Site Plan"
+              title="23+ Acres of Thoughtful Planning"
+              subtitle="A low-density layout with generous open spaces, forest zones, and wide roads — crafted for comfort and community."
+            />
 
-        {/* Master Plan Viewer Container */}
-        <div className="relative rounded-3xl overflow-hidden border border-gold/40 shadow-2xl bg-black/50 backdrop-blur-md">
-          {/* Action Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gold/20 bg-forest/90">
-            <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-xs uppercase tracking-wider font-semibold text-ivory">
-                23.26 Acres · 199–202 Luxury Villa Plots · 12M Arterial Roadways
-              </span>
+            <div className="space-y-5 mt-6">
+              {[
+                { label: 'Total Villas', value: '202' },
+                { label: 'Open Green Area', value: 'Three Forest Zones' },
+                { label: 'Clubhouse', value: '1,986 Sq. Yds' },
+                { label: 'Internal Roads', value: '40-ft & 60-ft Wide' },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center justify-between py-3 border-b border-softgrey">
+                  <span className="text-sm text-charcoal/50 font-body">{item.label}</span>
+                  <span className="text-sm font-medium text-charcoal font-body">{item.value}</span>
+                </div>
+              ))}
             </div>
-            <button
-              onClick={() => setIsZoomed(!isZoomed)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold border border-gold/50 text-gold hover:bg-gold hover:text-charcoal transition-colors"
-            >
-              <Maximize2 className="w-3.5 h-3.5" />
-              <span>{isZoomed ? 'Reset View' : 'Zoom Plan'}</span>
-            </button>
           </div>
 
-          {/* Master Plan Map Graphic */}
+          {/* Master plan image */}
+          <div className="relative group">
+            <div
+              className="relative overflow-hidden cursor-pointer"
+              onClick={() => setLightboxOpen(true)}
+              role="button"
+              aria-label="View full master plan"
+            >
+              <div className="aspect-[4/3] relative">
+                <Image
+                  src="/images/master-plan/master-plan.jpg"
+                  alt="Thukkuguda Villas Master Plan"
+                  fill
+                  className="object-contain bg-white"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-all duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white p-3 rounded">
+                  <ZoomIn className="w-5 h-5 text-charcoal" />
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-taupe font-body mt-3 text-center">Click to view full plan</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-charcoal/95 flex items-center justify-center p-4"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-5 right-5 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
           <div
-            className={`relative w-full aspect-[16/10] overflow-hidden transition-all duration-300 ${
-              isZoomed ? 'scale-125 cursor-zoom-out' : 'cursor-zoom-in'
-            }`}
-            onClick={() => setIsZoomed(!isZoomed)}
+            className="relative max-w-5xl w-full max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
           >
             <Image
               src="/images/master-plan/master-plan.jpg"
-              alt="Thukkuguda Villas 24-Acre Architectural Master Plan"
-              fill
-              className="object-contain p-2"
+              alt="Thukkuguda Villas Master Plan – Full View"
+              width={1452}
+              height={968}
+              className="w-full h-auto object-contain"
+              priority
             />
           </div>
-
-          {/* Key Legend Footer */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 bg-forest/95 border-t border-gold/20 text-xs">
-            <div className="flex items-center gap-2">
-              <Compass className="w-4 h-4 text-gold flex-shrink-0" />
-              <span>12M (40-Ft) Internal Roads</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-gold flex-shrink-0" />
-              <span>267–445 Sq. Yds Plots</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Trees className="w-4 h-4 text-gold flex-shrink-0" />
-              <span>OSR Parks &amp; Forest Belts</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-gold flex-shrink-0" />
-              <span>1,986 Sq. Yds Grand Clubhouse</span>
-            </div>
-          </div>
         </div>
-
-        {/* Action Link */}
-        <div className="text-center mt-8">
-          <a
-            href="#enquiry"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gold text-charcoal font-semibold text-xs uppercase tracking-wider hover:bg-gold/90 transition-all shadow-xl"
-          >
-            Request High-Resolution Master Plan &amp; Plot Availability
-          </a>
-        </div>
-      </div>
+      )}
     </section>
   );
 };

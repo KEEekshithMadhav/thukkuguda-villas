@@ -28,27 +28,26 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-forest/95 backdrop-blur-md shadow-lg py-3.5 border-b border-gold/20'
-          : 'bg-gradient-to-b from-forest/90 via-forest/50 to-transparent py-5'
+          ? 'bg-white/95 backdrop-blur-sm border-b border-softgrey py-3'
+          : 'bg-white/90 backdrop-blur-sm border-b border-softgrey/60 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="group flex flex-col">
-            <span className="font-heading text-xl sm:text-2xl font-bold tracking-wide text-ivory group-hover:text-gold transition-colors">
-              Thukkuguda<span className="text-gold italic font-normal ml-1">Villas</span>
+            <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-charcoal group-hover:text-taupe transition-colors duration-300">
+              Thukkuguda <span className="italic font-normal">Villas</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.25em] text-gold/80 -mt-1 font-body">
+            <span className="text-[9px] uppercase tracking-[0.25em] text-taupe -mt-0.5 font-body">
               24 Acres · Gated Community
             </span>
           </Link>
@@ -61,27 +60,27 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm tracking-wide font-medium transition-colors relative py-1 ${
-                    isActive ? 'text-gold' : 'text-ivory/85 hover:text-gold'
+                  className={`text-sm font-medium transition-colors duration-200 relative py-1 font-body ${
+                    isActive ? 'text-charcoal' : 'text-charcoal/60 hover:text-charcoal'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-px bg-charcoal rounded-full" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Desktop Direct Contact Actions */}
+          {/* Desktop Contact Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={phone1.tel}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium border border-gold/50 text-gold hover:bg-gold hover:text-charcoal transition-all"
-              title={`Call Sales: ${phone1.display}`}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-charcoal/70 hover:text-charcoal border border-softgrey hover:border-charcoal/40 transition-all duration-200 rounded"
+              title={`Call: ${phone1.display}`}
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3 h-3" />
               <span>{phone1.display}</span>
             </a>
 
@@ -89,7 +88,7 @@ export const Navbar: React.FC = () => {
               href={phone1.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded text-emerald-400 border border-emerald-500/40 hover:bg-emerald-600 hover:text-white transition-all"
+              className="p-1.5 text-emerald-600 border border-emerald-200 hover:bg-emerald-50 transition-all duration-200 rounded"
               title="Chat on WhatsApp"
               aria-label="WhatsApp enquiry"
             >
@@ -98,7 +97,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               href="/contact"
-              className="px-4 py-1.5 rounded text-xs font-semibold uppercase tracking-wider bg-gold text-charcoal hover:bg-gold/90 transition-all shadow-sm"
+              className="px-4 py-1.5 text-xs font-medium border border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-all duration-200 rounded"
             >
               Enquire
             </Link>
@@ -107,18 +106,18 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-ivory hover:text-gold rounded transition-colors"
+            className="md:hidden p-2 text-charcoal hover:text-taupe rounded transition-colors"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-forest/98 backdrop-blur-xl border-b border-gold/20 px-6 pt-4 pb-8 space-y-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden bg-white border-b border-softgrey px-6 pt-4 pb-8 space-y-6 shadow-sm">
           <nav className="flex flex-col space-y-4">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -126,8 +125,8 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-lg font-heading tracking-wide transition-colors ${
-                    isActive ? 'text-gold font-semibold' : 'text-ivory/80 hover:text-gold'
+                  className={`text-base font-body tracking-wide transition-colors ${
+                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/60 hover:text-charcoal'
                   }`}
                 >
                   {link.name}
@@ -136,40 +135,40 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          <div className="pt-4 border-t border-gold/20 space-y-3">
-            <p className="text-[10px] uppercase tracking-widest text-gold font-semibold">Immediate Assistance</p>
-            
+          <div className="pt-4 border-t border-softgrey space-y-3">
+            <p className="text-[10px] uppercase tracking-widest text-taupe font-medium">Contact Us</p>
+
             {/* Phone 1 */}
-            <div className="flex items-center justify-between p-2.5 rounded bg-black/25 border border-gold/20">
+            <div className="flex items-center justify-between p-3 rounded bg-offwhite border border-softgrey">
               <div>
-                <p className="text-[10px] text-ivory/60 uppercase">Line 1</p>
-                <a href={phone1.tel} className="text-xs font-semibold text-ivory hover:text-gold">
+                <p className="text-[10px] text-taupe uppercase tracking-wide mb-0.5">Line 1</p>
+                <a href={phone1.tel} className="text-sm font-medium text-charcoal hover:text-taupe">
                   {phone1.display}
                 </a>
               </div>
-              <div className="flex items-center gap-1.5">
-                <a href={phone1.tel} className="p-1.5 rounded bg-gold/20 text-gold" title="Call">
+              <div className="flex items-center gap-2">
+                <a href={phone1.tel} className="p-1.5 rounded bg-charcoal/8 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
                   <Phone className="w-3.5 h-3.5" />
                 </a>
-                <a href={phone1.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-500/20 text-emerald-400" title="WhatsApp">
+                <a href={phone1.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
 
             {/* Phone 2 */}
-            <div className="flex items-center justify-between p-2.5 rounded bg-black/25 border border-gold/20">
+            <div className="flex items-center justify-between p-3 rounded bg-offwhite border border-softgrey">
               <div>
-                <p className="text-[10px] text-ivory/60 uppercase">Line 2</p>
-                <a href={phone2.tel} className="text-xs font-semibold text-ivory hover:text-gold">
+                <p className="text-[10px] text-taupe uppercase tracking-wide mb-0.5">Line 2</p>
+                <a href={phone2.tel} className="text-sm font-medium text-charcoal hover:text-taupe">
                   {phone2.display}
                 </a>
               </div>
-              <div className="flex items-center gap-1.5">
-                <a href={phone2.tel} className="p-1.5 rounded bg-gold/20 text-gold" title="Call">
+              <div className="flex items-center gap-2">
+                <a href={phone2.tel} className="p-1.5 rounded bg-charcoal/8 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
                   <Phone className="w-3.5 h-3.5" />
                 </a>
-                <a href={phone2.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-500/20 text-emerald-400" title="WhatsApp">
+                <a href={phone2.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
               </div>

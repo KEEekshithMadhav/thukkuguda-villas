@@ -6,17 +6,13 @@
    CSS CUSTOM PROPERTIES — DESIGN TOKENS
    ========================================= */
 :root {
-  /* Color Palette */
-  --color-forest: #0b3d2e;
-  --color-forest-light: #145c44;
-  --color-forest-dark: #072a1f;
-  --color-ivory: #faf7ee;
-  --color-gold: #d4af7a;
-  --color-gold-light: #e2c898;
-  --color-gold-dark: #b8903e;
-  --color-charcoal: #2b2b2b;
-  --color-beige: #e8dfd1;
-  --color-beige-dark: #d4c5b2;
+  /* Contemporary Minimalism Palette */
+  --color-offwhite: #F7F6F2;
+  --color-stone: #E5E1D8;
+  --color-softgrey: #D2D1CC;
+  --color-charcoal: #30302E;
+  --color-taupe: #A69B8B;
+  --color-white: #FFFFFF;
 
   /* Typography */
   --font-heading: "Playfair Display", Georgia, serif;
@@ -42,7 +38,7 @@
   }
 
   body {
-    @apply bg-ivory text-charcoal;
+    @apply bg-offwhite text-charcoal;
     font-family: var(--font-body);
     line-height: 1.7;
   }
@@ -63,25 +59,25 @@
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-ivory);
+    background: var(--color-offwhite);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-forest);
-    border-radius: 4px;
+    background: var(--color-softgrey);
+    border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-forest-light);
+    background: var(--color-taupe);
   }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-forest) var(--color-ivory);
+    scrollbar-color: var(--color-softgrey) var(--color-offwhite);
   }
 }
 
@@ -89,38 +85,6 @@
    UTILITY CLASSES
    ========================================= */
 @layer utilities {
-  /* Text utilities */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-forest {
-    background: linear-gradient(135deg, var(--color-forest), var(--color-forest-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Background utilities */
-  .bg-forest-gradient {
-    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
-  }
-
-  .bg-gold-gradient {
-    background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold-light) 100%);
-  }
-
-  .bg-overlay-dark {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  .bg-overlay-forest {
-    background: rgba(11, 61, 46, 0.7);
-  }
-
   /* Section utilities */
   .section-padding {
     @apply py-20 px-6 md:px-12 lg:px-24;
@@ -130,43 +94,43 @@
     @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-16;
   }
 
-  /* Gold divider */
-  .divider-gold {
-    @apply w-16 h-0.5 bg-gold mx-auto my-6;
+  /* Thin divider */
+  .divider-taupe {
+    @apply w-12 h-px bg-taupe mx-auto my-6;
   }
 
-  .divider-gold-left {
-    @apply w-16 h-0.5 bg-gold my-6;
+  .divider-taupe-left {
+    @apply w-12 h-px bg-taupe my-6;
   }
 
   /* Button base */
   .btn-primary {
-    @apply bg-forest text-ivory px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
-           hover:bg-forest-light transition-all duration-300 ease-out;
+    @apply bg-charcoal text-white px-8 py-3 font-body font-medium text-sm
+           hover:bg-charcoal/85 transition-all duration-300 ease-out;
   }
 
   .btn-secondary {
-    @apply border border-gold text-gold px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
-           hover:bg-gold hover:text-forest transition-all duration-300 ease-out;
+    @apply border border-charcoal text-charcoal px-8 py-3 font-body font-medium text-sm
+           hover:bg-charcoal hover:text-white transition-all duration-300 ease-out;
   }
 
-  .btn-gold {
-    @apply bg-gold text-forest px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
-           hover:bg-gold-dark hover:text-ivory transition-all duration-300 ease-out;
+  .btn-taupe {
+    @apply bg-taupe text-white px-8 py-3 font-body font-medium text-sm
+           hover:bg-taupe/85 transition-all duration-300 ease-out;
   }
 
   /* Card utilities */
   .card-shadow {
-    box-shadow: 0 4px 24px rgba(11, 61, 46, 0.08);
+    box-shadow: 0 2px 16px rgba(48, 48, 46, 0.06);
   }
 
   .card-shadow-hover {
     @apply transition-shadow duration-300;
-    box-shadow: 0 4px 24px rgba(11, 61, 46, 0.08);
+    box-shadow: 0 2px 16px rgba(48, 48, 46, 0.06);
   }
 
   .card-shadow-hover:hover {
-    box-shadow: 0 12px 48px rgba(11, 61, 46, 0.16);
+    box-shadow: 0 8px 32px rgba(48, 48, 46, 0.12);
   }
 
   /* Animation helpers */
@@ -183,34 +147,24 @@
    COMPONENT LAYER
    ========================================= */
 @layer components {
-  /* Hero section video overlay */
-  .hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(11, 61, 46, 0.3) 0%,
-      rgba(11, 61, 46, 0.1) 40%,
-      rgba(43, 43, 43, 0.6) 100%
-    );
-  }
-
   /* Section heading group */
   .section-heading {
-    @apply text-center mb-16;
+    @apply mb-16;
   }
 
   .section-heading .label {
-    @apply text-gold font-body font-medium tracking-[0.3em] uppercase text-sm mb-3 block;
+    @apply text-taupe font-body font-medium tracking-[0.2em] uppercase text-xs mb-3 block;
   }
 
   .section-heading h2 {
-    @apply text-4xl md:text-5xl font-heading text-forest mb-4;
+    @apply text-4xl md:text-5xl font-heading text-charcoal mb-4;
   }
 
-  .section-heading .divider-gold {
-    @apply w-16 h-0.5 bg-gold mx-auto my-4;
+  .section-heading .divider-taupe {
+    @apply w-12 h-px bg-taupe my-4;
   }
 
   .section-heading p {
-    @apply text-charcoal/70 max-w-2xl mx-auto font-body text-lg;
+    @apply text-charcoal/60 max-w-2xl font-body text-lg;
   }
 }

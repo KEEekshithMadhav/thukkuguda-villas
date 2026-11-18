@@ -1,73 +1,125 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Eye } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { galleryItems } from '@/data/gallery';
 
-export const ArchitecturalGallery: React.FC = () => {
-  // Showcase the first 6 items for the homepage preview
-  const previewItems = galleryItems.slice(0, 6);
+const ArchitecturalGallery: React.FC = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  // Show first 8 villa elevation images
+  const featured = galleryItems.filter((g) => g.category === 'villas').slice(0, 8);
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prevLightbox = () =>
+    setLightboxIndex((i) => (i !== null ? (i > 0 ? i - 1 : featured.length - 1) : null));
+  const nextLightbox = () =>
+    setLightboxIndex((i) => (i !== null ? (i < featured.length - 1 ? i + 1 : 0) : null));
 
   return (
-    <section className="py-24 bg-charcoal text-ivory relative border-b border-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+    <section className="bg-stone py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <SectionHeading
-            eyebrow="AUTHENTIC ARCHITECTURE"
-            title="Design &amp; Materiality"
-            subtitle="Explore the structural proportions, textured stone cladding, and wide frontage setbacks defining the villa typologies."
-            align="left"
-            light={true}
+            eyebrow="Architecture"
+            title="Villa Elevations"
           />
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gold text-gold hover:bg-gold hover:text-charcoal transition-all text-xs font-semibold uppercase tracking-wider self-start md:self-auto shadow"
+            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-taupe transition-colors whitespace-nowrap mb-4"
           >
-            <span>View All Elevations &amp; Plans</span>
-            <ArrowRight className="w-4 h-4" />
+            View Full Gallery <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {previewItems.map((item, index) => (
-            <motion.div
+        {/* Editorial grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {featured.map((item, index) => (
+            <button
               key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-forest border border-gold/30 shadow-lg"
+              onClick={() => openLightbox(index)}
+              className={`relative overflow-hidden group bg-offwhite text-left ${
+                index === 0 ? 'col-span-2 row-span-2' : ''
+              }`}
+              aria-label={`View ${item.title}`}
             >
-              <Image
-                src={item.src}
-                alt={item.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent opacity-75 group-hover:opacity-90 transition-opacity" />
-
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-gold">
-                    {item.category === 'villas' ? 'Elevation' : item.category}
-                  </span>
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-ivory mt-0.5 line-clamp-1">
-                    {item.title}
-                  </h3>
-                </div>
-                <div className="w-9 h-9 rounded-full bg-gold/20 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-charcoal transition-colors flex-shrink-0">
-                  <Eye className="w-4 h-4" />
-                </div>
+              <div className={`relative w-full ${index === 0 ? 'aspect-[4/3]' : 'aspect-square'}`}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes={index === 0 ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
+                />
+                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-all duration-300" />
               </div>
-            </motion.div>
+              {index === 0 && (
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-charcoal/60 to-transparent">
+                  <p className="text-white text-sm font-medium font-body">{item.title}</p>
+                </div>
+              )}
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-charcoal/97 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-5 right-5 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={featured[lightboxIndex].src}
+              alt={featured[lightboxIndex].alt}
+              width={featured[lightboxIndex].width}
+              height={featured[lightboxIndex].height}
+              className="w-full h-auto max-h-[80vh] object-contain"
+              priority
+            />
+            <div className="mt-4 text-center">
+              <p className="text-white/80 text-sm font-body">{featured[lightboxIndex].title}</p>
+              {featured[lightboxIndex].description && (
+                <p className="text-white/40 text-xs font-body mt-1 max-w-xl mx-auto">
+                  {featured[lightboxIndex].description}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 text-white rounded transition-all"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
     </section>
   );
 };

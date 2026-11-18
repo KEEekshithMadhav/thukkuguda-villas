@@ -2,129 +2,165 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ArrowRight, ShieldCheck, Maximize2 } from 'lucide-react';
+import Link from 'next/link';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { villaConfigurations } from '@/data/villas';
 
-export const VillaExplorer: React.FC = () => {
-  const [activeId, setActiveId] = useState(villaConfigurations[0].id);
+const VillaExplorer: React.FC = () => {
+  const [activeVillaIndex, setActiveVillaIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  const activeVilla =
-    villaConfigurations.find((v) => v.id === activeId) ||
-    villaConfigurations[0];
+  const villa = villaConfigurations[activeVillaIndex];
+  const images = villa.galleryImages;
+
+  const handleVillaChange = (index: number) => {
+    setActiveVillaIndex(index);
+    setActiveImageIndex(0);
+  };
+
+  const prevImage = () => setActiveImageIndex((i) => (i > 0 ? i - 1 : images.length - 1));
+  const nextImage = () => setActiveImageIndex((i) => (i < images.length - 1 ? i + 1 : 0));
 
   return (
-    <section className="py-24 bg-ivory text-charcoal overflow-hidden border-b border-gold/15">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <SectionHeading
-          eyebrow="INTERACTIVE EXPLORATION"
-          title="Compare Your Villa Dimensions"
-          subtitle="Explore the four bespoke villa typologies available across the 24-acre master layout."
-          align="center"
-          className="mb-12"
+          eyebrow="Villa Explorer"
+          title="Discover Your Ideal Configuration"
+          subtitle="Select a villa size to explore its elevations and design details."
         />
 
-        {/* Tab Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
-          {villaConfigurations.map((villa) => {
-            const isActive = villa.id === activeId;
-            return (
-              <button
-                key={villa.id}
-                onClick={() => setActiveId(villa.id)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border ${
-                  isActive
-                    ? 'bg-forest text-gold border-gold shadow-md scale-105'
-                    : 'bg-white/80 text-charcoal/70 border-gold/30 hover:border-gold hover:text-charcoal'
-                }`}
-              >
-                {villa.plotSize}
-              </button>
-            );
-          })}
+        {/* Villa selector tabs */}
+        <div className="flex flex-wrap gap-0 border-b border-softgrey mb-10">
+          {villaConfigurations.map((v, index) => (
+            <button
+              key={v.id}
+              onClick={() => handleVillaChange(index)}
+              className={`px-6 py-3 text-sm font-body font-medium transition-all duration-200 border-b-2 -mb-px ${
+                activeVillaIndex === index
+                  ? 'text-charcoal border-charcoal'
+                  : 'text-charcoal/40 border-transparent hover:text-charcoal/70'
+              }`}
+            >
+              {v.plotSize}
+            </button>
+          ))}
         </div>
 
-        {/* Interactive Comparison Card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeVilla.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl border border-gold/30 shadow-xl p-6 sm:p-10"
-          >
-            {/* Visual Column */}
-            <div className="lg:col-span-7">
-              <div className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-forest border border-gold/30 shadow-inner">
-                <Image
-                  src={activeVilla.image}
-                  alt={`${activeVilla.plotSize} Architectural Elevation`}
-                  fill
-                  className="object-contain p-4"
-                />
-                <div className="absolute top-4 right-4 bg-forest/90 border border-gold/40 text-gold text-xs px-3 py-1.5 rounded-md font-semibold">
-                  Architectural Elevation
-                </div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+          {/* Main image with navigation */}
+          <div className="lg:col-span-3 relative">
+            <div className="aspect-[4/3] relative overflow-hidden bg-stone">
+              <Image
+                src={images[activeImageIndex]}
+                alt={`${villa.plotSize} Villa – Image ${activeImageIndex + 1}`}
+                fill
+                className="object-cover transition-opacity duration-500"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                key={images[activeImageIndex]}
+              />
             </div>
 
-            {/* Specifications Column */}
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <span className="text-xs uppercase tracking-widest text-gold font-bold">
-                  Typology Breakdown
-                </span>
-                <h3 className="font-heading text-3xl sm:text-4xl font-bold text-forest mt-1">
-                  {activeVilla.plotSize}
-                </h3>
-                <p className="text-sm font-medium text-charcoal/70 mt-1">
-                  Total Built-Up Area:{' '}
-                  <span className="text-forest font-bold text-base">
-                    {activeVilla.builtUpArea}
-                  </span>
-                </p>
-              </div>
-
-              {/* Key Highlights */}
-              <div className="space-y-3 pt-2 border-t border-gold/20">
-                <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/60">
-                  Included Standards
-                </p>
-                <div className="space-y-2">
-                  {activeVilla.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2.5 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-forest/10 text-forest flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3.5 h-3.5" />
-                      </div>
-                      <span className="text-charcoal/90 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Project Assurance */}
-              <div className="p-4 rounded-xl bg-forest/5 border border-forest/15 flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-forest flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-charcoal/80 leading-relaxed">
-                  Positioned with expansive 40-ft internal roadway frontage, ensuring ample setbacks and privacy.
-                </p>
-              </div>
-
-              {/* Enquire CTA */}
-              <div className="pt-2">
-                <a
-                  href="#enquiry"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-lg bg-gold text-charcoal font-semibold text-sm hover:bg-gold/90 transition-all shadow-md"
+            {/* Nav arrows */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white text-charcoal transition-all"
+                  aria-label="Previous image"
                 >
-                  <span>Enquire for {activeVilla.plotSize}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/90 hover:bg-white text-charcoal transition-all"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </>
+            )}
+
+            {/* Dot indicators */}
+            {images.length > 1 && (
+              <div className="flex justify-center gap-1.5 mt-4">
+                {images.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImageIndex(i)}
+                    className={`h-px transition-all duration-200 ${
+                      i === activeImageIndex ? 'w-8 bg-charcoal' : 'w-4 bg-softgrey'
+                    }`}
+                    aria-label={`Image ${i + 1}`}
+                  />
+                ))}
               </div>
+            )}
+          </div>
+
+          {/* Details panel */}
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-taupe font-body mb-2">{villa.id.replace('-', ' ').toUpperCase()}</p>
+              <h3 className="font-heading text-4xl font-semibold text-charcoal">{villa.plotSize}</h3>
+              <p className="text-charcoal/50 font-body mt-1">{villa.builtUpArea} built-up area</p>
             </div>
-          </motion.div>
-        </AnimatePresence>
+
+            <div className="space-y-3 border-t border-softgrey pt-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-taupe font-body mb-3">Available Facings</p>
+              {villa.facingOptions.map((facing) => (
+                <div key={facing} className="flex items-center gap-2">
+                  <div className="w-1 h-1 rounded-full bg-taupe" />
+                  <span className="text-sm text-charcoal/70 font-body">{facing}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-2.5 border-t border-softgrey pt-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-taupe font-body mb-3">Features</p>
+              {villa.features.map((feature) => (
+                <div key={feature} className="flex items-start gap-2">
+                  <div className="w-1 h-1 rounded-full bg-taupe mt-2" />
+                  <span className="text-sm text-charcoal/70 font-body">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-charcoal text-white px-7 py-3 text-sm font-medium hover:bg-charcoal/85 transition-all duration-200"
+              >
+                Enquire About This Villa
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Thumbnail strip */}
+        {images.length > 1 && (
+          <div className="flex gap-3 mt-8 overflow-x-auto pb-2">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveImageIndex(i)}
+                className={`flex-shrink-0 w-20 h-16 relative overflow-hidden transition-all duration-200 ${
+                  i === activeImageIndex ? 'ring-2 ring-charcoal' : 'opacity-50 hover:opacity-80'
+                }`}
+              >
+                <Image
+                  src={img}
+                  alt={`Thumbnail ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

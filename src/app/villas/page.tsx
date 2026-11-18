@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Phone, MessageCircle, ArrowRight, Maximize2, Shield } from 'lucide-react';
+import { MessageCircle, Check } from 'lucide-react';
 import { villaConfigurations } from '@/data/villas';
 import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
@@ -13,93 +13,88 @@ export const metadata: Metadata = {
 };
 
 export default function VillasPage() {
-  const { phone1, phone2 } = projectData;
+  const { phone1 } = projectData;
 
   return (
-    <div className="min-h-screen bg-ivory text-charcoal pt-24 font-body">
+    <div className="min-h-screen bg-offwhite text-charcoal pt-16 font-body">
       {/* Page Header */}
-      <section className="bg-forest text-ivory py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/images/hero/hero-bg.svg"
-            alt="Villas Architectural Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">
-            24 ACRES · 202 VILLAS
+      <section className="bg-white border-b border-softgrey py-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <span className="text-xs uppercase tracking-[0.25em] text-taupe font-medium">
+            24 Acres · 202 Villas
           </span>
-          <h1 className="font-heading text-4xl sm:text-6xl font-bold mt-2 mb-4 text-ivory">
+          <h1 className="font-heading text-4xl sm:text-6xl font-semibold mt-3 mb-4 text-charcoal">
             Villa Configurations
           </h1>
-          <p className="text-base sm:text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
-            Spacious plot dimensions ranging from 267 to 400 Sq. Yds with expansive built-up layouts, large-format tiles, and branded fittings.
+          <p className="text-base sm:text-lg text-charcoal/50 max-w-2xl leading-relaxed font-body">
+            Four thoughtfully proportioned villa sizes — 267 to 400 Sq. Yds — with built-up
+            areas from 4,222 to 6,000 Sq. Ft., large-format tiles, and branded fittings.
           </p>
         </div>
       </section>
 
       {/* Villa Showcase Grid */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <section className="py-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {villaConfigurations.map((villa) => (
             <div
               key={villa.id}
-              className="bg-white rounded-3xl overflow-hidden border border-gold/30 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+              id={villa.id}
+              className="bg-white overflow-hidden border border-softgrey hover:border-charcoal/20 transition-all duration-300"
             >
               {/* Architectural Image */}
-              <div className="relative aspect-[16/10] bg-forest">
+              <div className="relative aspect-[16/9] bg-stone">
                 <Image
                   src={villa.image}
                   alt={`${villa.plotSize} Villa Architectural Elevation`}
                   fill
-                  className="object-contain p-4"
+                  className="object-contain p-3"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute top-4 left-4 bg-forest/90 border border-gold/40 text-gold text-xs px-3 py-1 rounded font-semibold uppercase tracking-wider">
-                  Plot {villa.plotSize}
-                </div>
               </div>
 
               {/* Body */}
-              <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
+              <div className="p-7 space-y-6">
                 <div>
-                  <div className="flex items-baseline justify-between border-b border-gold/20 pb-4 mb-4">
+                  <div className="flex items-baseline justify-between border-b border-softgrey pb-4 mb-4">
                     <div>
-                      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-forest">
+                      <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-charcoal">
                         {villa.plotSize}
                       </h2>
-                      <p className="text-xs uppercase tracking-wider text-charcoal/60 mt-0.5">
-                        Villa Plot Size
+                      <p className="text-xs uppercase tracking-widest text-taupe mt-0.5 font-body">
+                        Plot Size
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-heading text-xl sm:text-2xl font-bold text-gold">
+                      <p className="font-heading text-xl sm:text-2xl font-semibold text-charcoal">
                         {villa.builtUpArea}
                       </p>
-                      <p className="text-xs uppercase tracking-wider text-charcoal/60 mt-0.5">
+                      <p className="text-xs uppercase tracking-widest text-taupe mt-0.5 font-body">
                         Built-Up Area
                       </p>
                     </div>
                   </div>
 
                   {/* Facing Options */}
-                  <div className="flex flex-wrap gap-1.5 mb-3">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {villa.facingOptions.map((opt) => (
-                      <span key={opt} className="px-2.5 py-0.5 rounded-full bg-forest/10 text-forest text-[11px] font-semibold">
+                      <span
+                        key={opt}
+                        className="px-2.5 py-1 border border-softgrey text-charcoal/60 text-[11px] font-body"
+                      >
                         {opt}
                       </span>
                     ))}
                   </div>
 
                   <div className="space-y-3">
-                    <p className="text-xs uppercase font-semibold text-gold tracking-wider">
-                      Included Project Specifications
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-taupe font-body font-medium">
+                      Specifications
                     </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-charcoal/80">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-charcoal/60 font-body">
                       {villa.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-2">
-                          <Check className="w-3.5 h-3.5 text-forest flex-shrink-0" />
+                          <Check className="w-3 h-3 text-taupe flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -107,18 +102,18 @@ export default function VillasPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gold/15 flex flex-col sm:flex-row items-center gap-3">
+                <div className="pt-4 border-t border-softgrey flex flex-col sm:flex-row items-center gap-3">
                   <Link
                     href={`/contact?size=${encodeURIComponent(villa.plotSize)}`}
-                    className="w-full sm:flex-1 py-3 px-4 rounded-lg bg-forest text-ivory text-xs font-semibold uppercase tracking-wider text-center hover:bg-forest/90 transition-all shadow"
+                    className="w-full sm:flex-1 py-3 px-4 bg-charcoal text-white text-xs font-medium text-center hover:bg-charcoal/85 transition-all"
                   >
-                    Enquire for {villa.plotSize}
+                    Enquire – {villa.plotSize}
                   </Link>
                   <a
                     href={phone1.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto p-3 rounded-lg border border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-colors flex items-center justify-center gap-2 text-xs font-semibold"
+                    className="w-full sm:w-auto p-3 border border-emerald-200 text-emerald-700 hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2 text-xs font-medium"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>WhatsApp</span>
@@ -130,41 +125,37 @@ export default function VillasPage() {
         </div>
       </section>
 
-      {/* Project Highlights Banner */}
-      <section className="bg-forest text-ivory py-16 border-y border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Stats Banner */}
+      <section className="bg-charcoal text-white py-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="font-heading text-3xl sm:text-4xl font-bold text-gold">24</p>
-              <p className="text-xs uppercase tracking-wider text-ivory/80 mt-1">Total Acres</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl sm:text-4xl font-bold text-gold">202</p>
-              <p className="text-xs uppercase tracking-wider text-ivory/80 mt-1">Total Villas</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl sm:text-4xl font-bold text-gold">40 Ft</p>
-              <p className="text-xs uppercase tracking-wider text-ivory/80 mt-1">Wide Roads</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl sm:text-4xl font-bold text-gold">Grand</p>
-              <p className="text-xs uppercase tracking-wider text-ivory/80 mt-1">Clubhouse</p>
-            </div>
+            {[
+              { value: '24 Acres', label: 'Total Area' },
+              { value: '202', label: 'Premium Villas' },
+              { value: '40-ft', label: 'Wide Roads' },
+              { value: 'Grand', label: 'Clubhouse' },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p className="font-heading text-3xl sm:text-4xl font-semibold text-white">{stat.value}</p>
+                <p className="text-xs uppercase tracking-widest text-white/40 mt-1 font-body">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Immediate CTA */}
-      <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white rounded-3xl p-10 sm:p-14 border border-gold/30 shadow-xl space-y-6">
-          <h2 className="font-heading text-3xl font-bold text-forest">
-            Ready to Schedule a Site Consultation?
+      {/* CTA */}
+      <section className="py-20 max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center">
+        <div className="bg-white border border-softgrey p-10 sm:p-14 space-y-6">
+          <h2 className="font-heading text-3xl font-semibold text-charcoal">
+            Schedule a Site Visit
           </h2>
-          <p className="text-sm text-charcoal/70 max-w-xl mx-auto">
-            Our on-site advisors are available seven days a week to guide you through plot orientations, road layouts, and villa dimensions.
+          <p className="text-sm text-charcoal/50 max-w-xl mx-auto font-body">
+            Our site advisors are available seven days a week to show you plot orientations,
+            road layouts, and villa dimensions in person.
           </p>
           <div className="pt-2 flex justify-center">
-            <PhoneButtons variant="stacked" />
+            <PhoneButtons layout="row" />
           </div>
         </div>
       </section>

@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Compass,
   Plane,
   Train,
   GraduationCap,
   Building2,
   Briefcase,
   MapPin,
-  Clock,
-  Phone,
-  MessageCircle,
+  Circle,
 } from 'lucide-react';
 import { locationHighlights } from '@/data/location';
 import { projectData } from '@/data/project';
@@ -22,8 +20,8 @@ export const metadata: Metadata = {
     'Strategically situated in Tukkuguda (Mankhal), South Hyderabad. 5 minutes to ORR, 10 minutes to RGIA Airport, 5 minutes to Metro Station, and close to international schools.',
 };
 
-const ICON_MAP = {
-  road: Compass,
+const ICON_MAP: Record<string, React.ElementType> = {
+  road: Circle,
   plane: Plane,
   train: Train,
   school: GraduationCap,
@@ -32,119 +30,136 @@ const ICON_MAP = {
 };
 
 export default function LocationPage() {
-  const { phone1, phone2 } = projectData;
-
   return (
-    <div className="min-h-screen bg-ivory text-charcoal pt-24 font-body">
+    <div className="min-h-screen bg-offwhite text-charcoal pt-16 font-body">
       {/* Page Header */}
-      <section className="bg-forest text-ivory py-20 relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">
-            STRATEGIC LOCATION
+      <section className="bg-white border-b border-softgrey py-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <span className="text-xs uppercase tracking-[0.25em] text-taupe font-medium">
+            Strategic Location
           </span>
-          <h1 className="font-heading text-4xl sm:text-6xl font-bold mt-2 mb-4 text-ivory">
-            Location &amp; Connectivity
+          <h1 className="font-heading text-4xl sm:text-6xl font-semibold mt-3 mb-4 text-charcoal">
+            Location & Connectivity
           </h1>
-          <p className="text-base sm:text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
-            Positioned at Tukkuguda (Mankhal) in South Hyderabad — connected to major highways, air transit, educational institutions, and employment zones.
+          <p className="text-base sm:text-lg text-charcoal/50 max-w-2xl leading-relaxed font-body">
+            Tukkuguda (Mankhal), South Hyderabad — connected to major highways, international
+            airport, schools, and business hubs.
           </p>
         </div>
       </section>
 
-      {/* Connectivity Highlights Cards */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-widest text-gold font-bold">
-            Travel Times &amp; Key Hubs
-          </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest mt-1">
+      {/* Map Images */}
+      <section className="pt-16 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+            <Image
+              src="/images/location/connectivity-route.jpg"
+              alt="Thukkuguda Villas – Road Connectivity to ORR and Airport"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="grid grid-rows-2 gap-4">
+            <div className="relative aspect-video overflow-hidden bg-stone">
+              <Image
+                src="/images/location/aerial-context.jpg"
+                alt="Thukkuguda Villas – Aerial Context View"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+            </div>
+            <div className="relative aspect-video overflow-hidden bg-stone">
+              <Image
+                src="/images/location/site-aerial.jpg"
+                alt="Thukkuguda Villas – Site Aerial"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Connectivity Highlights */}
+      <section className="py-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="mb-12">
+          <span className="text-xs uppercase tracking-[0.25em] text-taupe font-medium">Travel Times & Key Hubs</span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-charcoal mt-3">
             Seamless Regional Access
           </h2>
-          <p className="text-sm text-charcoal/70 max-w-xl mx-auto mt-2">
-            Every destination is within swift driving distance via the Outer Ring Road network.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-softgrey">
           {locationHighlights.map((item) => {
-            const Icon = ICON_MAP[item.icon] || MapPin;
+            const Icon = ICON_MAP[item.icon] || Circle;
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl p-8 border border-gold/30 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                className="p-7 border-b border-r border-softgrey hover:bg-white transition-colors duration-200"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-forest/10 text-forest flex items-center justify-center">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="px-3.5 py-1.5 rounded-full bg-forest text-gold font-bold text-xs">
-                      {item.duration}
-                    </span>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-9 h-9 flex items-center justify-center bg-stone">
+                    <Icon className="w-4 h-4 text-taupe" />
                   </div>
-
-                  <h3 className="font-heading text-xl font-bold text-charcoal mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-charcoal/70 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <span className="text-xs font-medium text-taupe font-body border border-softgrey px-2.5 py-1">
+                    {item.duration}
+                  </span>
                 </div>
+                <h3 className="font-body font-semibold text-sm text-charcoal mb-2">{item.title}</h3>
+                {item.distance && (
+                  <p className="text-xs text-charcoal/40 font-body mb-1">{item.distance}</p>
+                )}
+                <p className="text-xs text-charcoal/50 font-body leading-relaxed">{item.description}</p>
               </div>
             );
           })}
         </div>
       </section>
 
-      {/* South Hyderabad Corridor Narrative */}
-      <section className="py-20 bg-beige/40 border-y border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-widest text-forest font-bold">
-                The Growth Corridor
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-forest">
+      {/* South Hyderabad Narrative */}
+      <section className="py-20 bg-stone border-y border-softgrey">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="text-xs uppercase tracking-[0.25em] text-taupe font-medium">The Growth Corridor</span>
+              <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-charcoal">
                 Why Tukkuguda, South Hyderabad?
               </h2>
-              <div className="space-y-4 text-sm text-charcoal/80 leading-relaxed">
+              <div className="space-y-4 text-sm text-charcoal/60 leading-relaxed font-body">
                 <p>
-                  South Hyderabad has evolved into one of the state’s fastest-growing residential and institutional corridors. With immediate access to the 8-lane Outer Ring Road, residents benefit from direct, signal-free transit to RGIA Airport and the Financial District.
+                  South Hyderabad has evolved into one of the state&apos;s fastest-growing residential
+                  corridors. With immediate access to the 8-lane Outer Ring Road, residents benefit
+                  from direct, signal-free transit to RGIA Airport and the Financial District.
                 </p>
                 <p>
-                  The micro-market around Tukkuguda and Mankhal offers low-density, high-air-quality living while maintaining proximity to international schools such as DPS, Aga Khan Academy, Sloka, and Manchester International.
+                  The micro-market around Tukkuguda and Mankhal offers low-density, high-quality
+                  living while maintaining proximity to international schools including DPS,
+                  Aga Khan Academy, Sloka, and Manchester International.
                 </p>
               </div>
-
-              <div className="pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-forest text-ivory text-xs font-semibold uppercase tracking-wider hover:bg-forest/90 transition-all shadow-md"
-                >
-                  Schedule Guided Site Tour
-                </Link>
-              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-7 py-3 bg-charcoal text-white text-sm font-medium hover:bg-charcoal/85 transition-all"
+              >
+                Schedule Site Tour
+              </Link>
             </div>
 
-            {/* Address & Quick Overview */}
-            <div className="lg:col-span-6 bg-forest text-ivory rounded-3xl p-8 sm:p-12 border border-gold/40 shadow-2xl space-y-6">
-              <div className="flex items-center gap-2 text-gold">
-                <MapPin className="w-5 h-5" />
-                <span className="text-xs uppercase tracking-widest font-bold">Exact Address</span>
+            <div className="bg-white border border-softgrey p-8 space-y-6">
+              <div className="flex items-center gap-2 text-taupe">
+                <MapPin className="w-4 h-4" />
+                <span className="text-xs uppercase tracking-[0.2em] font-medium">Address</span>
               </div>
-
-              <h3 className="font-heading text-2xl font-bold text-ivory">
+              <h3 className="font-heading text-2xl font-semibold text-charcoal">
                 {projectData.name}
               </h3>
-              <p className="text-sm text-ivory/80 leading-relaxed">
-                {projectData.address}
-              </p>
-
-              <div className="space-y-3 pt-4 border-t border-gold/20">
-                <p className="text-xs uppercase tracking-wider text-gold font-semibold">
-                  Direct Inquiries
-                </p>
-                <PhoneButtons variant="pills" />
+              <p className="text-sm text-charcoal/50 font-body leading-relaxed">{projectData.address}</p>
+              <div className="pt-5 border-t border-softgrey">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-taupe font-medium mb-4">Contact</p>
+                <PhoneButtons layout="column" />
               </div>
             </div>
           </div>

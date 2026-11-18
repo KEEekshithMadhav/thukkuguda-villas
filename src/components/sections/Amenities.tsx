@@ -1,112 +1,48 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import {
-  Compass,
-  Trees,
-  Landmark,
-  ShieldCheck,
-  Zap,
-  Droplets,
-  Layers,
-  Sparkles,
-} from 'lucide-react';
+import { Trees, Dumbbell, Waves, Car, Shield, Bike, Coffee, Wifi } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-const AMENITY_LIST = [
-  {
-    title: 'Grand Clubhouse',
-    category: 'Community & Leisure',
-    description: 'A dedicated social center for community events, indoor recreation, and neighborhood fellowship.',
-    icon: Landmark,
-  },
-  {
-    title: '40-Foot Wide Arterial Roads',
-    category: 'Infrastructure',
-    description: 'Expansive internal roads designed with proper curbs, drainage, and uninterrupted pedestrian paths.',
-    icon: Compass,
-  },
-  {
-    title: 'Landscaped Avenues',
-    category: 'Environment',
-    description: 'Manicured boulevards and mature tree lines that enhance microclimate and community privacy.',
-    icon: Trees,
-  },
-  {
-    title: 'Smart Villa Architecture',
-    category: 'Design Engineering',
-    description: 'Thoughtfully planned elevations ensuring maximum natural lighting, ventilation, and privacy.',
-    icon: Zap,
-  },
-  {
-    title: 'Large-Format Flooring',
-    category: 'Interior Standards',
-    description: 'Refined surfaces throughout the living and public zones providing an expansive aesthetic.',
-    icon: Layers,
-  },
-  {
-    title: 'Branded Fittings & Hardware',
-    category: 'Quality Finishes',
-    description: 'Reputed fixtures ensuring timeless aesthetics, longevity, and effortless maintenance.',
-    icon: Sparkles,
-  },
-  {
-    title: '24/7 Gated Security',
-    category: 'Safety',
-    description: 'Access-controlled main entry pavilion with perimeter boundary surveillance.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Underground Infrastructure',
-    category: 'Aesthetic Planning',
-    description: 'Concealed cabling, drainage, and utility networks that keep the avenues clean and wire-free.',
-    icon: Droplets,
-  },
+const amenities = [
+  { icon: Trees, name: 'Forest Green Zones', desc: 'Three protected dense forest buffers' },
+  { icon: Dumbbell, name: 'Grand Clubhouse', desc: '1,986 Sq. Yds of premium recreational space' },
+  { icon: Waves, name: 'Swimming Pool', desc: 'Full-size pool within the clubhouse complex' },
+  { icon: Car, name: 'Wide Roads', desc: '40-ft and 60-ft internal roads throughout' },
+  { icon: Shield, name: 'Gated Security', desc: '24/7 manned security with CCTV surveillance' },
+  { icon: Bike, name: 'Landscaped Avenues', desc: 'Tree-lined walkways and green corridors' },
+  { icon: Coffee, name: 'Community Spaces', desc: 'Dedicated areas for social gatherings' },
+  { icon: Wifi, name: 'Smart Infrastructure', desc: 'Modern utility and connectivity provisions' },
 ];
 
-export const Amenities: React.FC = () => {
+const Amenities: React.FC = () => {
   return (
-    <section className="py-24 bg-ivory text-charcoal border-b border-gold/15">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="COMMUNITY AMENITIES"
-          title="Curated for an Uncompromised Standard of Life"
-          subtitle="A harmonious blend of wide open spaces, dedicated social infrastructure, and meticulous attention to craftsmanship."
-          align="center"
-          className="mb-16"
-        />
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          {/* Left column – heading */}
+          <div className="lg:col-span-1">
+            <SectionHeading
+              eyebrow="Community"
+              title="Amenities & Features"
+              subtitle="Curated facilities that complement the quality of your home."
+            />
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {AMENITY_LIST.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="p-6 rounded-2xl bg-white border border-gold/25 hover:border-gold hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-forest/10 text-forest flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-[10px] uppercase tracking-wider text-gold font-semibold">
-                    {item.category}
-                  </span>
-                  <h3 className="font-heading text-lg font-semibold text-charcoal mt-1 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-charcoal/70 leading-relaxed">
-                    {item.description}
-                  </p>
+          {/* Right columns – amenities grid */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-0 border-t border-l border-softgrey">
+            {amenities.map((amenity) => {
+              const Icon = amenity.icon;
+              return (
+                <div
+                  key={amenity.name}
+                  className="p-6 border-b border-r border-softgrey group hover:bg-offwhite transition-colors duration-200"
+                >
+                  <Icon className="w-5 h-5 text-taupe mb-3" />
+                  <h3 className="font-body font-semibold text-charcoal text-sm mb-1">{amenity.name}</h3>
+                  <p className="text-xs text-charcoal/50 font-body leading-relaxed">{amenity.desc}</p>
                 </div>
-              </motion.div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

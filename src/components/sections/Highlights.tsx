@@ -1,92 +1,51 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import {
-  Compass,
-  Trees,
-  Landmark,
-  Layers,
-  Sparkles,
-  Cpu,
-} from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
+import { projectData } from '@/data/project';
 
-const HIGHLIGHT_ITEMS = [
-  {
-    title: 'Wide 40-ft Roads',
-    description: 'Spacious internal avenues that ensure effortless two-way vehicular flow, wide sidewalks, and generous setbacks between homes.',
-    icon: Compass,
-  },
-  {
-    title: 'Landscaped Avenues',
-    description: 'Thoughtfully curated native flora and shaded walkways creating tranquil green canopies throughout the 24-acre master community.',
-    icon: Trees,
-  },
-  {
-    title: 'Grand Clubhouse',
-    description: 'An architectural centerpiece for community recreation, wellness, social gatherings, and refined leisure.',
-    icon: Landmark,
-  },
-  {
-    title: 'Large-format Tiles',
-    description: 'Seamless flooring surfaces that expand visual scale and reflect light, creating clean architectural sophistication inside every villa.',
-    icon: Layers,
-  },
-  {
-    title: 'Branded Fittings',
-    description: 'Curated international bath fittings, electrical systems, and hardware that ensure durability, performance, and refined touchpoints.',
-    icon: Sparkles,
-  },
-  {
-    title: 'Smart Villa Designs',
-    description: 'Intelligent spatial layouts optimized for cross-ventilation, expansive private terraces, and flexible contemporary family lifestyles.',
-    icon: Cpu,
-  },
-];
+const featureDescriptions: Record<string, string> = {
+  'Wide 40-ft & 60-ft Roads': 'Expansive internal roads providing ease of movement and an open, airy streetscape.',
+  'Landscaped Avenues': 'Tree-lined pathways and curated green corridors throughout the community.',
+  'Grand World-Class Clubhouse': 'A landmark clubhouse across 1,986 Sq. Yds offering premium recreational facilities.',
+  'Large-format Tiles': 'Premium large-format flooring tiles for a refined, contemporary interior feel.',
+  'Branded Fittings': 'Carefully selected branded fixtures and fittings across kitchens and bathrooms.',
+  'Smart Villa Designs': 'Architecturally thoughtful floor plans designed for natural light and ventilation.',
+  'Three Dense Forest Zones': 'Protected green buffers providing privacy, shade and a connection to nature.',
+  'Low-Density Gated Living': '202 villas across 24 acres — generous space per home for genuine privacy.',
+};
 
-export const Highlights: React.FC = () => {
+const Highlights: React.FC = () => {
+  const { features } = projectData;
+
   return (
-    <section className="py-24 bg-forest text-ivory relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="bg-offwhite py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <SectionHeading
-          eyebrow="PROJECT HIGHLIGHTS"
-          title="Distinguished by Design &amp; Craft"
-          subtitle="Every facet of Thukkuguda Villas is engineered to deliver an enduring benchmark of gated villa living in South Hyderabad."
-          align="center"
-          light={true}
-          className="mb-16"
+          eyebrow="Why Thukkuguda Villas"
+          title="Designed for the Way You Live"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {HIGHLIGHT_ITEMS.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="p-8 rounded-xl bg-forest/80 border border-gold/25 hover:border-gold/60 backdrop-blur-sm transition-all duration-300 group shadow-lg"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gold/15 border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-charcoal transition-colors">
-                  <IconComponent className="w-6 h-6" />
-                </div>
-                <h3 className="font-heading text-xl font-semibold text-ivory mb-3 group-hover:text-gold transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-ivory/70 leading-relaxed">
-                  {item.description}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-softgrey">
+          {features.map((feature, index) => (
+            <div
+              key={feature}
+              className={`flex gap-5 py-7 px-2 ${
+                index < features.length - 2 ? 'border-b border-softgrey' : ''
+              } ${index % 2 === 0 ? 'md:border-r md:border-softgrey md:pr-8' : 'md:pl-8'}`}
+            >
+              {/* Number */}
+              <span className="text-xs font-body text-taupe/60 mt-1 w-5 flex-shrink-0 font-medium">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              {/* Content */}
+              <div>
+                <h3 className="font-body font-semibold text-charcoal text-sm mb-1.5">{feature}</h3>
+                <p className="text-sm text-charcoal/50 leading-relaxed font-body">
+                  {featureDescriptions[feature] || ''}
                 </p>
-              </motion.div>
-            );
-          })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

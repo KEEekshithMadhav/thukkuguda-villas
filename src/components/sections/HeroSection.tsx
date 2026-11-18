@@ -1,134 +1,117 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowDown, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
+import { MessageCircle, ArrowRight, MapPin } from 'lucide-react';
 import { projectData } from '@/data/project';
 
-export const HeroSection: React.FC = () => {
+const HeroSection: React.FC = () => {
   const { phone1 } = projectData;
 
+  const stats = [
+    { label: 'Development Area', value: '24 Acres' },
+    { label: 'Premium Villas', value: '202' },
+    { label: 'Villa Sizes', value: '267–400 Sq.Yds' },
+    { label: 'Roads', value: '40-ft Wide' },
+  ];
+
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center bg-forest text-ivory overflow-hidden pt-20">
-      {/* Background Architectural 3D Render from Design Book */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-screen flex flex-col">
+      {/* Full-width hero image */}
+      <div className="absolute inset-0">
         <Image
-          src="/images/hero/hero-villa.jpg"
-          alt="Thukkuguda Villas Architectural Facade"
+          src="/images/villas/villa-400-ef-01.jpg"
+          alt="Thukkuguda Villas – Premium Villa Architecture"
           fill
+          className="object-cover object-center"
           priority
-          className="object-cover object-center scale-105"
+          quality={90}
         />
-        {/* Dark Forest Green Tint Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/80 to-forest/70" />
-        <div className="absolute inset-0 bg-black/35" />
+        {/* Very subtle overlay – just enough for text legibility */}
+        <div className="absolute inset-0 bg-charcoal/35" />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 flex flex-col items-center">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/50 bg-forest/85 backdrop-blur-md mb-6 shadow-lg"
+      {/* NexHouz Logo – upper right */}
+      <div className="absolute top-20 right-6 md:right-10 lg:right-16 z-20">
+        <a
+          href="https://nexhouz.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block opacity-80 hover:opacity-100 transition-opacity duration-300"
+          title="NexHouz"
+          aria-label="NexHouz"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-          <span className="text-xs uppercase tracking-[0.25em] text-gold font-medium">
-            Tukkuguda (Mankhal) · South Hyderabad
+          <Image
+            src="/images/nexhouz-logo.svg"
+            alt="NexHouz"
+            width={110}
+            height={34}
+            className="invert brightness-200"
+          />
+        </a>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col justify-end flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 pb-16 md:pb-20 pt-32">
+
+        {/* Location label */}
+        <div className="flex items-center gap-2 mb-5">
+          <MapPin className="w-3.5 h-3.5 text-white/60" />
+          <span className="text-xs uppercase tracking-[0.25em] text-white/60 font-body">
+            Tukkuguda, South Hyderabad
           </span>
-        </motion.div>
+        </div>
 
-        {/* Main Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ivory leading-[1.08] mb-6 drop-shadow-md"
-        >
-          Thukkuguda <span className="text-gold italic font-normal">Villas</span>
-        </motion.h1>
+        {/* Title */}
+        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] mb-4 max-w-3xl">
+          Thukkuguda
+          <br />
+          <span className="italic font-normal text-white/85">Villas</span>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="font-body text-base sm:text-lg md:text-xl text-ivory/90 max-w-3xl mx-auto leading-relaxed mb-8 drop-shadow"
-        >
-          An exclusive 24-acre gated sanctuary featuring 202 bespoke villas with wide 40-ft internal roads, landscaped avenues, and a grand 1,986 Sq. Yds clubhouse.
-        </motion.p>
+        {/* Tagline */}
+        <p className="text-white/60 text-base md:text-lg font-body max-w-xl mb-10 leading-relaxed">
+          202 premium villas across 24 acres of curated landscape.
+          An address defined by space, light and quality.
+        </p>
 
-        {/* Key Metrics Strip */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 py-5 px-6 rounded-2xl border border-gold/30 bg-forest/80 backdrop-blur-md mb-10 w-full max-w-3xl shadow-2xl"
-        >
-          <div>
-            <p className="font-heading text-2xl sm:text-3xl font-bold text-gold">24</p>
-            <p className="text-xs uppercase tracking-wider text-ivory/75">Acres Land</p>
-          </div>
-          <div>
-            <p className="font-heading text-2xl sm:text-3xl font-bold text-gold">202</p>
-            <p className="text-xs uppercase tracking-wider text-ivory/75">Luxury Villas</p>
-          </div>
-          <div>
-            <p className="font-heading text-xl sm:text-2xl font-bold text-gold">267–400</p>
-            <p className="text-xs uppercase tracking-wider text-ivory/75">Sq. Yds Plots</p>
-          </div>
-          <div>
-            <p className="font-heading text-2xl sm:text-3xl font-bold text-gold">40 Ft</p>
-            <p className="text-xs uppercase tracking-wider text-ivory/75">Wide Roads</p>
-          </div>
-        </motion.div>
-
-        {/* CTA Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55 }}
-          className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-        >
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap items-center gap-4 mb-14">
           <Link
             href="/villas"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-lg text-sm uppercase tracking-wider font-semibold bg-gold text-charcoal hover:bg-gold/90 transition-all shadow-xl hover:scale-105"
+            className="inline-flex items-center gap-2 bg-white text-charcoal px-7 py-3 text-sm font-medium hover:bg-offwhite transition-all duration-200"
           >
             Explore Villas
+            <ArrowRight className="w-4 h-4" />
           </Link>
-          <a
-            href="#enquiry"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-lg text-sm uppercase tracking-wider font-semibold border border-gold text-gold hover:bg-gold hover:text-charcoal transition-all shadow-lg"
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 border border-white/60 text-white px-7 py-3 text-sm font-medium hover:bg-white/10 transition-all duration-200"
           >
             Schedule Site Visit
-          </a>
+          </Link>
           <a
             href={phone1.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-6 py-3.5 rounded-lg text-sm font-semibold inline-flex items-center justify-center gap-2 bg-emerald-600 text-white hover:bg-emerald-500 transition-all shadow-lg"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium transition-colors"
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>WhatsApp</span>
+            <MessageCircle className="w-4 h-4 text-emerald-400" />
+            <span>WhatsApp Us</span>
           </a>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Animated Scroll Down Indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-gold/80 hover:text-gold cursor-pointer"
-        onClick={() => {
-          window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' });
-        }}
-      >
-        <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll to explore</span>
-        <ArrowDown className="w-4 h-4" />
-      </motion.div>
+        {/* Stats strip */}
+        <div className="flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-8">
+          {stats.map((stat, index) => (
+            <div key={index}>
+              <p className="text-xl md:text-2xl font-heading font-semibold text-white">{stat.value}</p>
+              <p className="text-xs text-white/50 font-body tracking-wide mt-0.5">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

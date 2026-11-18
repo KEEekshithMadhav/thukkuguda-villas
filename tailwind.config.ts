@@ -9,11 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        offwhite: "#F7F6F2",
+        stone: "#E5E1D8",
+        softgrey: "#D2D1CC",
+        charcoal: "#30302E",
+        taupe: "#A69B8B",
+        white: "#FFFFFF",
+        // Keep these for any legacy references during transition
         forest: "#0B3D2E",
-        ivory: "#FAF7EE",
-        gold: "#D4AF7A",
-        charcoal: "#2B2B2B",
-        beige: "#E8DFD1",
+        ivory: "#F7F6F2",
+        gold: "#A69B8B",
+        beige: "#E5E1D8",
       },
       fontFamily: {
         heading: ["Playfair Display", "Georgia", "serif"],
