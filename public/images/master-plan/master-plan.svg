@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="mpGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0E4534"/>
+      <stop offset="100%" stop-color="#06241b"/>
+    </radialGradient>
+    <pattern id="mpGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#D4AF7A" stroke-width="0.3" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#mpGrad)"/>
+  <rect width="1200" height="800" fill="url(#mpGrid)"/>
+
+  <!-- Site Boundary (24 Acres) -->
+  <polygon points="120,120 1080,100 1060,700 140,710" fill="#093125" stroke="#D4AF7A" stroke-width="2" opacity="0.8"/>
+
+  <!-- Wide 40-ft Roads Network -->
+  <g stroke="#D4AF7A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+    <!-- Main spine boulevard -->
+    <line x1="200" y1="400" x2="1000" y2="400"/>
+    <!-- Cross avenues -->
+    <line x1="380" y1="160" x2="380" y2="650"/>
+    <line x1="600" y1="140" x2="600" y2="660"/>
+    <line x1="820" y1="150" x2="820" y2="650"/>
+  </g>
+  <!-- Road Center Dashed Line -->
+  <g stroke="#FAF7EE" stroke-width="1" stroke-dasharray="6,8" opacity="0.6">
+    <line x1="200" y1="400" x2="1000" y2="400"/>
+    <line x1="380" y1="160" x2="380" y2="650"/>
+    <line x1="600" y1="140" x2="600" y2="660"/>
+    <line x1="820" y1="150" x2="820" y2="650"/>
+  </g>
+
+  <!-- Villa Plot Sectors (202 Total) -->
+  <g stroke="#D4AF7A" stroke-width="1" fill="#0B3D2E" opacity="0.75">
+    <!-- Sector A -->
+    <rect x="220" y="160" width="130" height="100"/>
+    <rect x="220" y="280" width="130" height="90"/>
+    <rect x="220" y="430" width="130" height="90"/>
+    <rect x="220" y="540" width="130" height="100"/>
+
+    <!-- Sector B -->
+    <rect x="420" y="160" width="150" height="100"/>
+    <rect x="420" y="280" width="150" height="90"/>
+    <rect x="420" y="430" width="150" height="90"/>
+    <rect x="420" y="540" width="150" height="100"/>
+
+    <!-- Sector C -->
+    <rect x="640" y="160" width="150" height="100"/>
+    <rect x="640" y="280" width="150" height="90"/>
+    <rect x="640" y="430" width="150" height="90"/>
+    <rect x="640" y="540" width="150" height="100"/>
+
+    <!-- Sector D -->
+    <rect x="850" y="160" width="130" height="100"/>
+    <rect x="850" y="280" width="130" height="90"/>
+    <rect x="850" y="430" width="130" height="90"/>
+    <rect x="850" y="540" width="130" height="100"/>
+  </g>
+
+  <!-- Grand Clubhouse Feature (Heart of Community) -->
+  <g transform="translate(600, 400)">
+    <circle r="48" fill="#124f3c" stroke="#D4AF7A" stroke-width="2.5"/>
+    <circle r="36" fill="#093125" stroke="#D4AF7A" stroke-width="1"/>
+    <text x="0" y="-4" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#FAF7EE" font-weight="600">GRAND</text>
+    <text x="0" y="10" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#D4AF7A">CLUBHOUSE</text>
+  </g>
+
+  <!-- Grand Entrance Gate (West / ORR connection) -->
+  <g transform="translate(140, 400)">
+    <rect x="-15" y="-35" width="30" height="70" fill="#0E4534" stroke="#D4AF7A" stroke-width="2"/>
+    <text x="-25" y="5" text-anchor="end" font-family="sans-serif" font-size="11" fill="#D4AF7A" letter-spacing="1">GRAND ENTRY (40 FT)</text>
+  </g>
+
+  <!-- Title & Legend -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#FAF7EE" letter-spacing="3">MASTER PLAN — 24 ACRES</text>
+    <text x="0" y="24" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#D4AF7A" letter-spacing="2">202 EXCLUSIVE VILLAS · 40-FT WIDE INTERNAL ROADS · LANDSCAPED AVENUES</text>
+  </g>
+
+  <!-- Compass Rose -->
+  <g transform="translate(1030, 200)" stroke="#D4AF7A" stroke-width="1.5" fill="none">
+    <circle r="24" opacity="0.5"/>
+    <polygon points="0,-22 6,-6 0,-10 -6,-6" fill="#D4AF7A"/>
+    <line x1="0" y1="22" x2="0" y2="-22"/>
+    <line x1="-22" y1="0" x2="22" y2="0"/>
+    <text x="0" y="-28" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#FAF7EE" font-weight="bold">N</text>
+  </g>
+</svg>

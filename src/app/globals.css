@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   CSS CUSTOM PROPERTIES — DESIGN TOKENS
+   ========================================= */
+:root {
+  /* Color Palette */
+  --color-forest: #0b3d2e;
+  --color-forest-light: #145c44;
+  --color-forest-dark: #072a1f;
+  --color-ivory: #faf7ee;
+  --color-gold: #d4af7a;
+  --color-gold-light: #e2c898;
+  --color-gold-dark: #b8903e;
+  --color-charcoal: #2b2b2b;
+  --color-beige: #e8dfd1;
+  --color-beige-dark: #d4c5b2;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding-y: 5rem;
+  --section-padding-x: 1.5rem;
+
+  /* Transitions */
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* =========================================
+   BASE STYLES
+   ========================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal;
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    @apply text-charcoal;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-ivory);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-forest);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-forest-light);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-forest) var(--color-ivory);
+  }
+}
+
+/* =========================================
+   UTILITY CLASSES
+   ========================================= */
+@layer utilities {
+  /* Text utilities */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-forest {
+    background: linear-gradient(135deg, var(--color-forest), var(--color-forest-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background utilities */
+  .bg-forest-gradient {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold-light) 100%);
+  }
+
+  .bg-overlay-dark {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .bg-overlay-forest {
+    background: rgba(11, 61, 46, 0.7);
+  }
+
+  /* Section utilities */
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-16;
+  }
+
+  /* Gold divider */
+  .divider-gold {
+    @apply w-16 h-0.5 bg-gold mx-auto my-6;
+  }
+
+  .divider-gold-left {
+    @apply w-16 h-0.5 bg-gold my-6;
+  }
+
+  /* Button base */
+  .btn-primary {
+    @apply bg-forest text-ivory px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
+           hover:bg-forest-light transition-all duration-300 ease-out;
+  }
+
+  .btn-secondary {
+    @apply border border-gold text-gold px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
+           hover:bg-gold hover:text-forest transition-all duration-300 ease-out;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-forest px-8 py-3 font-body font-medium tracking-wider uppercase text-sm
+           hover:bg-gold-dark hover:text-ivory transition-all duration-300 ease-out;
+  }
+
+  /* Card utilities */
+  .card-shadow {
+    box-shadow: 0 4px 24px rgba(11, 61, 46, 0.08);
+  }
+
+  .card-shadow-hover {
+    @apply transition-shadow duration-300;
+    box-shadow: 0 4px 24px rgba(11, 61, 46, 0.08);
+  }
+
+  .card-shadow-hover:hover {
+    box-shadow: 0 12px 48px rgba(11, 61, 46, 0.16);
+  }
+
+  /* Animation helpers */
+  .reveal-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .reveal-on-scroll.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* =========================================
+   COMPONENT LAYER
+   ========================================= */
+@layer components {
+  /* Hero section video overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 61, 46, 0.3) 0%,
+      rgba(11, 61, 46, 0.1) 40%,
+      rgba(43, 43, 43, 0.6) 100%
+    );
+  }
+
+  /* Section heading group */
+  .section-heading {
+    @apply text-center mb-16;
+  }
+
+  .section-heading .label {
+    @apply text-gold font-body font-medium tracking-[0.3em] uppercase text-sm mb-3 block;
+  }
+
+  .section-heading h2 {
+    @apply text-4xl md:text-5xl font-heading text-forest mb-4;
+  }
+
+  .section-heading .divider-gold {
+    @apply w-16 h-0.5 bg-gold mx-auto my-4;
+  }
+
+  .section-heading p {
+    @apply text-charcoal/70 max-w-2xl mx-auto font-body text-lg;
+  }
+}

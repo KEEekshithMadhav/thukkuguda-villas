@@ -1,0 +1,31 @@
+export const projectData = {
+  name: "Thukkuguda Villas",
+  location: "Tukkuguda (Mankhal), South Hyderabad, Telangana, India",
+  tagline: "Premium Gated Villa Community",
+  totalArea: "24 Acres",
+  totalVillas: 202,
+  villaPlotSizes: "267–400 Sq. Yds",
+  clubhouseArea: "1,986 Sq. Yds (1,661 Sq. M)",
+  roadWidths: "40-ft (12M) & 60-ft Wide Roads",
+  features: [
+    "Wide 40-ft & 60-ft Roads",
+    "Landscaped Avenues",
+    "Grand World-Class Clubhouse",
+    "Large-format Tiles",
+    "Branded Fittings",
+    "Smart Villa Designs",
+    "Three Dense Forest Zones",
+    "Low-Density Gated Living",
+  ],
+  phone1: {
+    display: "+91 98858 58529",
+    tel: "tel:+919885858529",
+    whatsapp: "https://wa.me/919885858529",
+  },
+  phone2: {
+    display: "+91 85858 54853",
+    tel: "tel:+918585854853",
+    whatsapp: "https://wa.me/918585854853",
+  },
+  address: "Tukkuguda (Mankhal), South Hyderabad, Telangana, India",
+};

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="heroGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#14523d" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0B3D2E" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#06241b" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="archGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#D4AF7A" stroke-width="0.3" opacity="0.15"/>
+      <circle cx="0" cy="0" r="1.5" fill="#D4AF7A" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#heroGlow)"/>
+  <rect width="1200" height="800" fill="url(#archGrid)"/>
+
+  <!-- Architectural elevation silhouette -->
+  <g opacity="0.35" stroke="#D4AF7A" stroke-width="1.2" fill="none">
+    <!-- Ground line -->
+    <line x1="100" y1="620" x2="1100" y2="620" stroke-width="2"/>
+    <!-- Villa silhouettes -->
+    <!-- Villa 1 Left -->
+    <rect x="180" y="380" width="220" height="240"/>
+    <polygon points="180,380 290,300 400,380"/>
+    <line x1="220" y1="440" x2="260" y2="440"/>
+    <line x1="220" y1="520" x2="260" y2="520"/>
+    <rect x="310" y="480" width="60" height="140"/>
+
+    <!-- Grand Center Villa -->
+    <rect x="450" y="280" width="300" height="340"/>
+    <polygon points="430,280 600,160 770,280"/>
+    <rect x="490" y="340" width="80" height="90"/>
+    <rect x="630" y="340" width="80" height="90"/>
+    <rect x="560" y="480" width="80" height="140"/>
+    <line x1="450" y1="450" x2="750" y2="450"/>
+
+    <!-- Villa 3 Right -->
+    <rect x="800" y="380" width="220" height="240"/>
+    <polygon points="800,380 910,300 1020,380"/>
+    <line x1="840" y1="440" x2="880" y2="440"/>
+    <rect x="910" y="480" width="60" height="140"/>
+  </g>
+
+  <!-- Framing border -->
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="#D4AF7A" stroke-width="1" opacity="0.4"/>
+  <rect x="50" y="50" width="1100" height="700" fill="none" stroke="#D4AF7A" stroke-width="0.5" opacity="0.2"/>
+</svg>

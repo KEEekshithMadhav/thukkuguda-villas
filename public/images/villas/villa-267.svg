@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="v267Grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#124a38"/>
+      <stop offset="100%" stop-color="#0B3D2E"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#v267Grad)"/>
+  
+  <!-- Architectural grid -->
+  <g stroke="#D4AF7A" stroke-width="0.5" opacity="0.2">
+    <line x1="100" y1="100" x2="700" y2="100"/>
+    <line x1="100" y1="200" x2="700" y2="200"/>
+    <line x1="100" y1="300" x2="700" y2="300"/>
+    <line x1="100" y1="400" x2="700" y2="400"/>
+    <line x1="100" y1="500" x2="700" y2="500"/>
+    <line x1="200" y1="100" x2="200" y2="500"/>
+    <line x1="300" y1="100" x2="300" y2="500"/>
+    <line x1="400" y1="100" x2="400" y2="500"/>
+    <line x1="500" y1="100" x2="500" y2="500"/>
+    <line x1="600" y1="100" x2="600" y2="500"/>
+  </g>
+
+  <!-- Villa Architectural Elevation Schematic -->
+  <g stroke="#D4AF7A" stroke-width="1.5" fill="none" transform="translate(150, 100)">
+    <!-- Base outline -->
+    <rect x="50" y="120" width="400" height="240" fill="#0E4534" fill-opacity="0.4"/>
+    <!-- Upper terrace / pergola -->
+    <line x1="30" y1="120" x2="470" y2="120" stroke-width="2"/>
+    <rect x="90" y="40" width="220" height="80" fill="#0B3D2E" fill-opacity="0.6"/>
+    <!-- Glazing lines -->
+    <rect x="110" y="60" width="70" height="60" stroke="#D4AF7A" stroke-width="1"/>
+    <rect x="210" y="60" width="70" height="60" stroke="#D4AF7A" stroke-width="1"/>
+    <!-- Ground floor glazing -->
+    <rect x="80" y="160" width="120" height="150" stroke="#D4AF7A" stroke-width="1.2"/>
+    <line x1="140" y1="160" x2="140" y2="310" stroke="#D4AF7A" stroke-width="1"/>
+    <!-- Door -->
+    <rect x="260" y="180" width="80" height="180" stroke="#D4AF7A" stroke-width="1.2"/>
+    <!-- Balcony Railing -->
+    <line x1="90" y1="100" x2="310" y2="100" stroke="#D4AF7A" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Header text -->
+  <text x="400" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#FAF7EE" letter-spacing="2">267 SQ. YDS VILLA</text>
+  <text x="400" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#D4AF7A" letter-spacing="3">4,222 SQ. FT. BUILT-UP AREA</text>
+
+  <!-- Spec Badges -->
+  <g transform="translate(400, 520)">
+    <rect x="-180" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="-125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Smart Design</text>
+
+    <rect x="-55" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="0" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">40-ft Roads</text>
+
+    <rect x="70" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Grand Living</text>
+  </g>
+</svg>

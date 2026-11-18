@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="v350Grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#165642"/>
+      <stop offset="100%" stop-color="#0B3D2E"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#v350Grad)"/>
+  
+  <!-- Architectural grid -->
+  <g stroke="#D4AF7A" stroke-width="0.5" opacity="0.2">
+    <line x1="60" y1="100" x2="740" y2="100"/>
+    <line x1="60" y1="200" x2="740" y2="200"/>
+    <line x1="60" y1="300" x2="740" y2="300"/>
+    <line x1="60" y1="400" x2="740" y2="400"/>
+    <line x1="60" y1="500" x2="740" y2="500"/>
+  </g>
+
+  <!-- Villa Architectural Elevation Schematic -->
+  <g stroke="#D4AF7A" stroke-width="1.5" fill="none" transform="translate(120, 90)">
+    <!-- Base outline -->
+    <rect x="30" y="100" width="500" height="260" fill="#0E4534" fill-opacity="0.4"/>
+    <line x1="10" y1="100" x2="550" y2="100" stroke-width="2"/>
+    <!-- Cantilevered upper section -->
+    <rect x="60" y="20" width="360" height="80" fill="#0B3D2E" fill-opacity="0.6"/>
+    <!-- Glazing lines upper -->
+    <rect x="80" y="35" width="100" height="65" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="200" y="35" width="100" height="65" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="320" y="35" width="80" height="65" stroke="#D4AF7A" stroke-width="1"/>
+    <!-- Double height foyer feature -->
+    <rect x="220" y="130" width="120" height="230" stroke="#D4AF7A" stroke-width="1.5"/>
+    <rect x="50" y="150" width="140" height="150" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="370" y="150" width="140" height="150" stroke="#D4AF7A" stroke-width="1.2"/>
+  </g>
+
+  <!-- Header text -->
+  <text x="400" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#FAF7EE" letter-spacing="2">350 SQ. YDS VILLA</text>
+  <text x="400" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#D4AF7A" letter-spacing="3">5,555 SQ. FT. BUONT-UP AREA</text>
+
+  <!-- Spec Badges -->
+  <g transform="translate(400, 520)">
+    <rect x="-180" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="-125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Smart Villa</text>
+
+    <rect x="-55" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="0" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Grand Clubhouse</text>
+
+    <rect x="70" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Branded Fittings</text>
+  </g>
+</svg>

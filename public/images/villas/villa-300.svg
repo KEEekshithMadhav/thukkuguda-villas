@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="v300Grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#144f3c"/>
+      <stop offset="100%" stop-color="#0B3D2E"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#v300Grad)"/>
+  
+  <!-- Architectural grid -->
+  <g stroke="#D4AF7A" stroke-width="0.5" opacity="0.2">
+    <line x1="80" y1="100" x2="720" y2="100"/>
+    <line x1="80" y1="200" x2="720" y2="200"/>
+    <line x1="80" y1="300" x2="720" y2="300"/>
+    <line x1="80" y1="400" x2="720" y2="400"/>
+    <line x1="80" y1="500" x2="720" y2="500"/>
+  </g>
+
+  <!-- Villa Architectural Elevation Schematic -->
+  <g stroke="#D4AF7A" stroke-width="1.5" fill="none" transform="translate(130, 95)">
+    <!-- Base outline -->
+    <rect x="40" y="110" width="460" height="250" fill="#0E4534" fill-opacity="0.4"/>
+    <!-- Upper terrace / floor -->
+    <line x1="20" y1="110" x2="520" y2="110" stroke-width="2"/>
+    <rect x="80" y="30" width="300" height="80" fill="#0B3D2E" fill-opacity="0.6"/>
+    <!-- Glazing lines upper -->
+    <rect x="100" y="45" width="80" height="65" stroke="#D4AF7A" stroke-width="1"/>
+    <rect x="200" y="45" width="80" height="65" stroke="#D4AF7A" stroke-width="1"/>
+    <rect x="300" y="45" width="60" height="65" stroke="#D4AF7A" stroke-width="1"/>
+    <!-- Ground floor glazing -->
+    <rect x="70" y="150" width="160" height="170" stroke="#D4AF7A" stroke-width="1.2"/>
+    <line x1="150" y1="150" x2="150" y2="320" stroke="#D4AF7A" stroke-width="1"/>
+    <!-- Grand Entrance -->
+    <rect x="290" y="160" width="90" height="200" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="400" y="180" width="70" height="140" stroke="#D4AF7A" stroke-width="1"/>
+  </g>
+
+  <!-- Header text -->
+  <text x="400" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#FAF7EE" letter-spacing="2">300 SQ. YDS VILLA</text>
+  <text x="400" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#D4AF7A" letter-spacing="3">4,777 SQ. FT. BUILT-UP AREA</text>
+
+  <!-- Spec Badges -->
+  <g transform="translate(400, 520)">
+    <rect x="-180" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="-125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Smart Design</text>
+
+    <rect x="-55" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="0" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Branded Fittings</text>
+
+    <rect x="70" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Large Tiles</text>
+  </g>
+</svg>

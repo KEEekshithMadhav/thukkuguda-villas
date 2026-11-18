@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="v400Grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#19614a"/>
+      <stop offset="100%" stop-color="#0B3D2E"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#v400Grad)"/>
+  
+  <!-- Architectural grid -->
+  <g stroke="#D4AF7A" stroke-width="0.5" opacity="0.2">
+    <line x1="50" y1="100" x2="750" y2="100"/>
+    <line x1="50" y1="200" x2="750" y2="200"/>
+    <line x1="50" y1="300" x2="750" y2="300"/>
+    <line x1="50" y1="400" x2="750" y2="400"/>
+    <line x1="50" y1="500" x2="750" y2="500"/>
+  </g>
+
+  <!-- Villa Architectural Elevation Schematic (3 levels / grand villa) -->
+  <g stroke="#D4AF7A" stroke-width="1.5" fill="none" transform="translate(100, 75)">
+    <!-- Base structure -->
+    <rect x="30" y="140" width="540" height="250" fill="#0E4534" fill-opacity="0.4"/>
+    <line x1="10" y1="140" x2="590" y2="140" stroke-width="2"/>
+    <!-- Level 2 -->
+    <rect x="50" y="60" width="480" height="80" fill="#0B3D2E" fill-opacity="0.6"/>
+    <line x1="30" y1="60" x2="550" y2="60" stroke-width="1.5"/>
+    <!-- Level 3 Sky Deck -->
+    <rect x="150" y="10" width="280" height="50" fill="#0B3D2E" fill-opacity="0.8"/>
+    
+    <!-- Glazing windows -->
+    <rect x="70" y="75" width="100" height="50" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="240" y="75" width="120" height="50" stroke="#D4AF7A" stroke-width="1.2"/>
+    <rect x="410" y="75" width="100" height="50" stroke="#D4AF7A" stroke-width="1.2"/>
+    
+    <!-- Grand ground level glass walls & entryway -->
+    <rect x="60" y="180" width="160" height="180" stroke="#D4AF7A" stroke-width="1.5"/>
+    <rect x="250" y="170" width="100" height="220" stroke="#D4AF7A" stroke-width="1.8"/>
+    <rect x="380" y="180" width="160" height="180" stroke="#D4AF7A" stroke-width="1.5"/>
+  </g>
+
+  <!-- Header text -->
+  <text x="400" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#FAF7EE" letter-spacing="2">400 SQ. YDS VILLA</text>
+  <text x="400" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#D4AF7A" letter-spacing="3">6,000 SQ. FT. BUILT-UP AREA</text>
+
+  <!-- Spec Badges -->
+  <g transform="translate(400, 520)">
+    <rect x="-180" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="-125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Smart Design</text>
+
+    <rect x="-55" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="0" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Grand Clubhouse</text>
+
+    <rect x="70" y="0" width="110" height="34" rx="4" fill="#0E4534" stroke="#D4AF7A" stroke-width="0.8"/>
+    <text x="125" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FAF7EE">Branded Fittings</text>
+  </g>
+</svg>
