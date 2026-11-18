@@ -121,11 +121,11 @@ const Footer: React.FC = () => {
               title="NexHouz"
             >
               <Image
-                src="/images/nexhouz-logo.svg"
+                src="/images/nexhouz-logo.png"
                 alt="NexHouz"
                 width={120}
-                height={36}
-                className="invert brightness-200"
+                height={38}
+                className="object-contain brightness-200 invert"
               />
             </a>
             <p className="text-xs text-white/30 mt-3 leading-relaxed">

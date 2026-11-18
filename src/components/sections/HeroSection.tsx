@@ -43,11 +43,12 @@ const HeroSection: React.FC = () => {
           aria-label="NexHouz"
         >
           <Image
-            src="/images/nexhouz-logo.svg"
+            src="/images/nexhouz-logo.png"
             alt="NexHouz"
             width={110}
             height={34}
-            className="invert brightness-200"
+            className="object-contain"
+            style={{ filter: 'brightness(0) invert(1)' }}
           />
         </a>
       </div>
