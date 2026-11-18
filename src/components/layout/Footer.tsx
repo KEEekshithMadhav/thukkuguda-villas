@@ -129,9 +129,13 @@ const Footer: React.FC = () => {
                 style={{ filter: 'brightness(0) invert(1)' }}
               />
             </a>
-            <p className="text-xs text-white/30 mt-3 leading-relaxed">
-              Premium Real Estate Marketing
-            </p>
+            <div className="mt-3 space-y-1">
+              <p className="text-xs text-white/30 leading-relaxed">
+                B-609, B Block, Asian Sun City,<br />
+                Kothaguda X Road, Kondapur,<br />
+                Hyderabad 500084
+              </p>
+            </div>
           </div>
         </div>
 

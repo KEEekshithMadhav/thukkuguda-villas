@@ -62,15 +62,15 @@ export const Navbar: React.FC = () => {
               href="https://nexhouz.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block opacity-80 hover:opacity-100 transition-opacity duration-300"
+              className="hidden sm:block opacity-85 hover:opacity-100 transition-opacity duration-300"
               title="NexHouz"
               aria-label="NexHouz"
             >
               <Image
                 src="/images/nexhouz-logo.png"
                 alt="NexHouz"
-                width={90}
-                height={28}
+                width={120}
+                height={38}
                 className="object-contain"
               />
             </a>

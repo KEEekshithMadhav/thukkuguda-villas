@@ -32,26 +32,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-charcoal/35" />
       </div>
 
-      {/* NexHouz Logo – upper right */}
-      <div className="absolute top-20 right-6 md:right-10 lg:right-16 z-20">
-        <a
-          href="https://nexhouz.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block opacity-90 hover:opacity-100 transition-opacity duration-300"
-          title="NexHouz"
-          aria-label="NexHouz"
-        >
-          <Image
-            src="/images/nexhouz-logo.png"
-            alt="NexHouz"
-            width={160}
-            height={50}
-            className="object-contain"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
-        </a>
-      </div>
+
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col justify-end flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 pb-16 md:pb-20 pt-32">
