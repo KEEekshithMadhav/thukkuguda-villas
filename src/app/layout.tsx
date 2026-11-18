@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -74,6 +75,24 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <FloatingContact />
+
+        {/* NexHouz Watermark – fixed bottom-left, visible on every page */}
+        <a
+          href="https://nexhouz.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-20 left-4 z-40 opacity-30 hover:opacity-80 transition-opacity duration-300 pointer-events-auto"
+          title="Marketed by NexHouz"
+          aria-label="NexHouz – Premium Real Estate Marketing"
+        >
+          <Image
+            src="/images/nexhouz-logo.png"
+            alt="NexHouz"
+            width={100}
+            height={32}
+            className="object-contain"
+          />
+        </a>
       </body>
     </html>
   );
