@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, MessageCircle, X, ChevronUp } from 'lucide-react';
+import { Phone, MessageCircle, X } from 'lucide-react';
 import { projectData } from '@/data/project';
 
 const FloatingContact: React.FC = () => {

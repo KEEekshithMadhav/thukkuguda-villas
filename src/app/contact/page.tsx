@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Phone, MessageCircle, MapPin, Clock, Shield } from 'lucide-react';
+import { MessageCircle, MapPin, Clock, Shield } from 'lucide-react';
 import EnquiryForm from '@/components/ui/EnquiryForm';
 import PhoneButtons from '@/components/ui/PhoneButtons';
 import { projectData } from '@/data/project';

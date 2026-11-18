@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   size = 'md',
   children,
   className = '',
-  as: Tag = 'button',
+  as,
   href,
   target,
   rel,
@@ -39,9 +39,14 @@ const Button: React.FC<ButtonProps> = ({
 
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  if (href) {
+  if (as === 'a' || href) {
     return (
-      <a href={href} target={target} rel={rel} className={classes}>
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={classes}
+      >
         {children}
       </a>
     );
