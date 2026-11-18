@@ -83,8 +83,8 @@ const MasterPlan: React.FC = () => {
             <Image
               src="/images/master-plan/master-plan.jpg"
               alt="Thukkuguda Villas Master Plan – Full View"
-              width={1452}
-              height={968}
+              width={1024}
+              height={599}
               className="w-full h-auto object-contain"
               priority
             />

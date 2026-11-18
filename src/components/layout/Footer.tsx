@@ -117,15 +117,16 @@ const Footer: React.FC = () => {
               href="https://nexhouz.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="inline-block opacity-80 hover:opacity-100 transition-opacity duration-300"
               title="NexHouz"
             >
               <Image
                 src="/images/nexhouz-logo.png"
                 alt="NexHouz"
-                width={120}
-                height={38}
-                className="object-contain brightness-200 invert"
+                width={160}
+                height={50}
+                className="object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </a>
             <p className="text-xs text-white/30 mt-3 leading-relaxed">

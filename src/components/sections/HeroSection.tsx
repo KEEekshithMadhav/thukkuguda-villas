@@ -38,15 +38,15 @@ const HeroSection: React.FC = () => {
           href="https://nexhouz.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block opacity-80 hover:opacity-100 transition-opacity duration-300"
+          className="block opacity-90 hover:opacity-100 transition-opacity duration-300"
           title="NexHouz"
           aria-label="NexHouz"
         >
           <Image
             src="/images/nexhouz-logo.png"
             alt="NexHouz"
-            width={110}
-            height={34}
+            width={160}
+            height={50}
             className="object-contain"
             style={{ filter: 'brightness(0) invert(1)' }}
           />

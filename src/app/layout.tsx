@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     "villas near RGIA Airport",
     "villas near ORR Hyderabad",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
   formatDetection: {
     email: false,
     address: false,

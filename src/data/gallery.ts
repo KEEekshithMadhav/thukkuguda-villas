@@ -100,12 +100,12 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "mp-1",
     src: "/images/master-plan/master-plan.jpg",
-    alt: "Thukkuguda Villas — 24-Acre Master Layout Plan",
+    alt: "Thukkuguda Villas — 23.26-Acre Master Layout Plan",
     category: "master-plan",
-    title: "24-Acre Community Master Plan",
-    description: "Architectural master layout featuring 202 villas along wide 40-ft internal arterial avenues and a 1,986 Sq. Yds grand clubhouse.",
-    width: 1452,
-    height: 968,
+    title: "23.26-Acre Community Master Plan",
+    description: "Master layout featuring 199 luxury villas across 23.26 acres. Villa sizes 267–445 Sq. Yds with 9M–16M wide roads, grand clubhouse (1,261 Sq.M / 13,565 Sq.Ft.) and three OSR green zones.",
+    width: 1024,
+    height: 599,
   },
   {
     id: "loc-route",
