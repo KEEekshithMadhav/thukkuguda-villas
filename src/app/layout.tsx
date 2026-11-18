@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
+      { url: "/images/nexhouz-logo.png", type: "image/png" },
     ],
     apple: "/favicon.png",
     shortcut: "/favicon.png",

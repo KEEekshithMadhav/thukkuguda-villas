@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
       {/* Full-width hero image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/villas/villa-400-ef-01.jpg"
+          src="/images/hero/hero-villa.jpg"
           alt="Thukkuguda Villas – Premium Villa Architecture"
           fill
           className="object-cover object-center"
