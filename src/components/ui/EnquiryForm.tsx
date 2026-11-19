@@ -23,6 +23,7 @@ interface FormErrors {
 interface EnquiryFormProps {
   className?: string
   variant?: 'light' | 'dark'
+  initialVillaSize?: string
 }
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -57,8 +58,12 @@ const INITIAL_FORM: FormData = {
 export default function EnquiryForm({
   className = '',
   variant = 'light',
+  initialVillaSize = '',
 }: EnquiryFormProps) {
-  const [formData, setFormData] = useState<FormData>(INITIAL_FORM)
+  const [formData, setFormData] = useState<FormData>(() => ({
+    ...INITIAL_FORM,
+    villaSize: initialVillaSize || '',
+  }))
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)

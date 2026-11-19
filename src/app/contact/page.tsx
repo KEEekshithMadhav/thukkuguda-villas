@@ -10,8 +10,13 @@ export const metadata: Metadata = {
     'Connect with the Thukkuguda Villas sales desk. Call +91 98858 58529 or +91 85858 54853, WhatsApp our relationship managers, or submit an enquiry.',
 };
 
-export default function ContactPage() {
+interface ContactPageProps {
+  searchParams?: { size?: string };
+}
+
+export default function ContactPage({ searchParams }: ContactPageProps) {
   const { phone1, phone2, address } = projectData;
+  const initialVillaSize = searchParams?.size;
 
   return (
     <div className="min-h-screen bg-offwhite text-charcoal pt-16 font-body">
@@ -108,7 +113,7 @@ export default function ContactPage() {
                 Complete the form below and we will contact you at the earliest.
               </p>
             </div>
-            <EnquiryForm variant="light" />
+            <EnquiryForm variant="light" initialVillaSize={initialVillaSize} />
           </div>
         </div>
       </section>

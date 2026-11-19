@@ -129,7 +129,7 @@ const VillaExplorer: React.FC = () => {
 
             <div className="pt-4">
               <Link
-                href="/contact"
+                href={`/contact?size=${encodeURIComponent(villa.plotSize)}`}
                 className="inline-flex items-center gap-2 bg-charcoal text-white px-7 py-3 text-sm font-medium hover:bg-charcoal/85 transition-all duration-200"
               >
                 Enquire About This Villa

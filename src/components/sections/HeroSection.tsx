@@ -32,8 +32,6 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-charcoal/35" />
       </div>
 
-
-
       {/* Main content */}
       <div className="relative z-10 flex flex-col justify-end flex-1 max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-16 pb-16 md:pb-20 pt-32">
 
