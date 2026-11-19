@@ -61,13 +61,13 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 relative py-1 font-body ${
-                    isActive ? 'text-charcoal' : 'text-charcoal/60 hover:text-charcoal'
+                  className={`text-sm font-medium transition-colors duration-200 relative py-1.5 font-body ${
+                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/65 hover:text-charcoal'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-px bg-charcoal rounded-full" />
+                    <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-charcoal rounded-full" />
                   )}
                 </Link>
               );
@@ -118,29 +118,40 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-softgrey px-6 pt-4 pb-8 space-y-6 shadow-sm">
-          <nav className="flex flex-col space-y-4">
+        <div className="md:hidden bg-white border-b border-softgrey px-6 pt-4 pb-8 space-y-6 shadow-md animate-fade-in">
+          <nav className="flex flex-col divide-y divide-softgrey/50">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-base font-body tracking-wide transition-colors ${
-                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/60 hover:text-charcoal'
+                  className={`py-3 text-sm font-body tracking-wide transition-colors flex items-center justify-between ${
+                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/70 hover:text-charcoal'
                   }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-charcoal" />}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="pt-4 border-t border-softgrey space-y-3">
-            <p className="text-[10px] uppercase tracking-widest text-taupe font-medium">Contact Us</p>
+          {/* Quick Enquire CTA for Mobile */}
+          <div className="pt-1">
+            <Link
+              href="/contact"
+              className="w-full inline-flex items-center justify-center py-3 bg-charcoal text-white text-xs uppercase tracking-widest font-medium rounded-sm shadow-xs hover:bg-charcoal/90 transition-colors"
+            >
+              Enquire / Book Site Visit
+            </Link>
+          </div>
+
+          <div className="pt-2 border-t border-softgrey space-y-3">
+            <p className="text-[10px] uppercase tracking-widest text-taupe font-medium">Direct Sales Desk</p>
 
             {/* Phone 1 */}
-            <div className="flex items-center justify-between p-3 rounded bg-offwhite border border-softgrey">
+            <div className="flex items-center justify-between p-3 rounded-sm bg-offwhite border border-softgrey">
               <div>
                 <p className="text-[10px] text-taupe uppercase tracking-wide mb-0.5">Line 1</p>
                 <a href={phone1.tel} className="text-sm font-medium text-charcoal hover:text-taupe">
@@ -148,17 +159,17 @@ export const Navbar: React.FC = () => {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <a href={phone1.tel} className="p-1.5 rounded bg-charcoal/8 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
+                <a href={phone1.tel} className="p-2 rounded bg-charcoal/5 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
                   <Phone className="w-3.5 h-3.5" />
                 </a>
-                <a href={phone1.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
+                <a href={phone1.whatsapp} target="_blank" rel="noopener noreferrer" className="p-2 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
 
             {/* Phone 2 */}
-            <div className="flex items-center justify-between p-3 rounded bg-offwhite border border-softgrey">
+            <div className="flex items-center justify-between p-3 rounded-sm bg-offwhite border border-softgrey">
               <div>
                 <p className="text-[10px] text-taupe uppercase tracking-wide mb-0.5">Line 2</p>
                 <a href={phone2.tel} className="text-sm font-medium text-charcoal hover:text-taupe">
@@ -166,10 +177,10 @@ export const Navbar: React.FC = () => {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <a href={phone2.tel} className="p-1.5 rounded bg-charcoal/8 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
+                <a href={phone2.tel} className="p-2 rounded bg-charcoal/5 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
                   <Phone className="w-3.5 h-3.5" />
                 </a>
-                <a href={phone2.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
+                <a href={phone2.whatsapp} target="_blank" rel="noopener noreferrer" className="p-2 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
               </div>

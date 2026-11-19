@@ -52,7 +52,7 @@ export default function GalleryPage() {
 
       {/* Filter Tabs */}
       <section className="pt-10 pb-6 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="flex flex-wrap items-center gap-0 border-b border-softgrey">
+        <div className="flex flex-wrap items-center gap-2 border-b border-softgrey/80 pb-4">
           {galleryCategories.map((category) => {
             const isActive = category.id === activeCategory;
             return (
@@ -62,10 +62,10 @@ export default function GalleryPage() {
                   setActiveCategory(category.id);
                   setLightboxIndex(null);
                 }}
-                className={`px-5 py-3 text-sm font-body font-medium transition-all border-b-2 -mb-px ${
+                className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-body font-medium rounded-sm transition-all duration-200 ${
                   isActive
-                    ? 'text-charcoal border-charcoal'
-                    : 'text-charcoal/40 border-transparent hover:text-charcoal/70'
+                    ? 'bg-charcoal text-white shadow-xs'
+                    : 'bg-white text-charcoal/70 border border-softgrey hover:text-charcoal hover:border-charcoal/30'
                 }`}
               >
                 {category.label}
@@ -77,12 +77,12 @@ export default function GalleryPage() {
 
       {/* Gallery Grid */}
       <section className="pb-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className="group relative overflow-hidden aspect-[4/3] bg-stone cursor-pointer"
+              className="group relative overflow-hidden aspect-[4/3] bg-stone rounded-sm border border-softgrey cursor-pointer shadow-xs hover:shadow-md transition-all duration-300"
             >
               <Image
                 src={item.src}
@@ -91,9 +91,10 @@ export default function GalleryPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-all duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-charcoal/70 to-transparent">
-                <p className="text-white text-sm font-medium font-body">{item.title}</p>
+              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-charcoal/75 via-charcoal/30 to-transparent">
+                <p className="text-white text-xs sm:text-sm font-medium font-body">{item.title}</p>
+                <p className="text-white/60 text-[10px] uppercase tracking-wider font-body mt-0.5">{item.category}</p>
               </div>
             </div>
           ))}

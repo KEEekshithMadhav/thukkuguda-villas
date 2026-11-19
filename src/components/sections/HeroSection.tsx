@@ -57,17 +57,17 @@ const HeroSection: React.FC = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center gap-4 mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-12 sm:mb-14">
           <Link
             href="/villas"
-            className="inline-flex items-center gap-2 bg-white text-charcoal px-7 py-3 text-sm font-medium hover:bg-offwhite transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 bg-white text-charcoal px-7 py-3.5 text-sm font-medium hover:bg-offwhite transition-all duration-200 shadow-sm"
           >
             Explore Villas
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 border border-white/60 text-white px-7 py-3 text-sm font-medium hover:bg-white/10 transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 border border-white/70 text-white px-7 py-3.5 text-sm font-medium hover:bg-white/10 backdrop-blur-xs transition-all duration-200"
           >
             Schedule Site Visit
           </Link>
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
             href={phone1.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center justify-center gap-2 text-white/90 hover:text-white px-4 py-3 text-sm font-medium transition-colors"
           >
             <MessageCircle className="w-4 h-4 text-emerald-400" />
             <span>WhatsApp Us</span>
@@ -83,11 +83,20 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Stats strip */}
-        <div className="flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 border-t border-white/20 pt-8">
           {stats.map((stat, index) => (
-            <div key={index}>
-              <p className="text-xl md:text-2xl font-heading font-semibold text-white">{stat.value}</p>
-              <p className="text-xs text-white/50 font-body tracking-wide mt-0.5">{stat.label}</p>
+            <div
+              key={index}
+              className={`${
+                index > 0 ? 'lg:border-l lg:border-white/15 lg:pl-8' : ''
+              }`}
+            >
+              <p className="text-2xl sm:text-3xl font-heading font-semibold text-white tracking-tight">
+                {stat.value}
+              </p>
+              <p className="text-[11px] sm:text-xs text-white/60 font-body uppercase tracking-[0.15em] mt-1">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

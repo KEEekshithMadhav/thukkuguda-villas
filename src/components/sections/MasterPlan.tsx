@@ -9,27 +9,30 @@ const MasterPlan: React.FC = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
-    <section className="bg-offwhite py-20 md:py-28">
+    <section className="bg-stone/25 border-y border-softgrey/60 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text side */}
           <div>
             <SectionHeading
               eyebrow="Site Plan"
               title="23+ Acres of Thoughtful Planning"
-              subtitle="A low-density layout with generous open spaces, forest zones, and wide roads — crafted for comfort and community."
+              subtitle="A low-density layout with generous open spaces, forest zones, and wide roads — crafted for comfort, privacy, and community living."
             />
 
-            <div className="space-y-5 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8">
               {[
-                { label: 'Total Villas', value: '202' },
+                { label: 'Total Villas', value: '202 Luxury Units' },
                 { label: 'Open Green Area', value: 'Three Forest Zones' },
                 { label: 'Clubhouse', value: '1,986 Sq. Yds' },
                 { label: 'Internal Roads', value: '40-ft & 60-ft Wide' },
               ].map((item) => (
-                <div key={item.label} className="flex items-center justify-between py-3 border-b border-softgrey">
-                  <span className="text-sm text-charcoal/50 font-body">{item.label}</span>
-                  <span className="text-sm font-medium text-charcoal font-body">{item.value}</span>
+                <div
+                  key={item.label}
+                  className="bg-white border border-softgrey p-4 rounded-sm"
+                >
+                  <p className="text-sm font-semibold text-charcoal font-heading">{item.value}</p>
+                  <p className="text-[11px] text-taupe uppercase tracking-widest mt-1 font-body">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -38,27 +41,30 @@ const MasterPlan: React.FC = () => {
           {/* Master plan image */}
           <div className="relative group">
             <div
-              className="relative overflow-hidden cursor-pointer"
+              className="relative overflow-hidden cursor-pointer bg-white border border-softgrey p-3 rounded-sm shadow-xs group-hover:border-taupe/60 transition-all duration-300"
               onClick={() => setLightboxOpen(true)}
               role="button"
               aria-label="View full master plan"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[16/10] relative overflow-hidden bg-white">
                 <Image
                   src="/images/master-plan/master-plan.jpg"
                   alt="Thukkuguda Villas Master Plan"
                   fill
-                  className="object-contain bg-white"
+                  className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-all duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white p-3 rounded">
-                  <ZoomIn className="w-5 h-5 text-charcoal" />
-                </div>
+              
+              {/* Interaction badge */}
+              <div className="mt-3 pt-3 border-t border-softgrey/60 flex items-center justify-between text-xs text-charcoal/70 font-body">
+                <span className="flex items-center gap-1.5 font-medium text-charcoal">
+                  <ZoomIn className="w-3.5 h-3.5 text-taupe" />
+                  <span>Tap to inspect layout</span>
+                </span>
+                <span className="text-[11px] text-taupe uppercase tracking-wider">High-Res Vector</span>
               </div>
             </div>
-            <p className="text-xs text-taupe font-body mt-3 text-center">Click to view full plan</p>
           </div>
         </div>
       </div>

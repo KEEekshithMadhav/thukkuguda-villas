@@ -19,21 +19,37 @@ const LocationSection: React.FC = () => {
     <section className="bg-offwhite py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Master Connectivity Map image */}
-          <div className="relative rounded-2xl overflow-hidden border border-softgrey bg-white shadow-xs group">
-            <div className="relative aspect-[16/10] overflow-hidden bg-stone">
-              <Image
-                src="/images/location/master-connectivity-map.jpg"
-                alt="Thukkuguda Villas – Regional Connectivity and Travel Times Map"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+          {/* Master Connectivity Map column */}
+          <div className="lg:sticky lg:top-28 space-y-5">
+            <div className="relative rounded-xl overflow-hidden border border-softgrey bg-white shadow-sm group">
+              <div className="relative aspect-[16/10] overflow-hidden bg-stone">
+                <Image
+                  src="/images/location/master-connectivity-map.jpg"
+                  alt="Thukkuguda Villas – Regional Connectivity and Travel Times Map"
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="p-4 bg-white border-t border-softgrey flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-xs text-charcoal/60 font-body">
+                <span className="font-medium text-charcoal">High-Resolution Regional Transit Map</span>
+                <span className="text-taupe font-medium">Tukkuguda · ORR · RGIA</span>
+              </div>
             </div>
-            <div className="p-4 bg-white border-t border-softgrey flex items-center justify-between text-xs text-charcoal/60 font-body">
-              <span>High-Resolution Regional Transit Map</span>
-              <span className="text-taupe font-medium">Tukkuguda · ORR · RGIA</span>
+
+            {/* Quick travel summary cards */}
+            <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+              {[
+                { title: 'ORR Exit-14', time: '5 Mins', note: '1.5 km to ORR' },
+                { title: 'RGIA Airport', time: '10 Mins', note: '9.7 km direct' },
+                { title: 'IT Corridor', time: '28 Mins', note: 'Financial District' },
+              ].map((card) => (
+                <div key={card.title} className="bg-white border border-softgrey p-3 rounded-sm text-center">
+                  <p className="text-xs sm:text-sm font-semibold text-charcoal font-heading">{card.time}</p>
+                  <p className="text-[10px] uppercase tracking-wider text-taupe font-medium mt-0.5">{card.title}</p>
+                </div>
+              ))}
             </div>
           </div>
 

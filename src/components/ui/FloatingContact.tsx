@@ -45,29 +45,39 @@ const FloatingContact: React.FC = () => {
 
       {/* WhatsApp quick button */}
       {!isOpen && (
-        <a
-          href={phone1.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-lg hover:bg-emerald-500 transition-all duration-200 text-sm font-medium"
-          aria-label="Chat on WhatsApp"
-        >
-          <MessageCircle className="w-4 h-4" />
-          <span>WhatsApp</span>
-        </a>
+        <>
+          {/* Desktop pill */}
+          <a
+            href={phone1.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-full shadow-md hover:bg-emerald-500 transition-all duration-200 text-xs font-medium"
+            aria-label="Chat on WhatsApp"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span>WhatsApp</span>
+          </a>
+
+          {/* Mobile compact circle */}
+          <a
+            href={phone1.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sm:hidden flex items-center justify-center w-11 h-11 bg-emerald-600 text-white rounded-full shadow-md hover:bg-emerald-500 transition-all duration-200"
+            aria-label="Chat on WhatsApp"
+          >
+            <MessageCircle className="w-5 h-5" />
+          </a>
+        </>
       )}
 
       {/* Toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-300 ${
-          isOpen
-            ? 'bg-charcoal text-white hover:bg-charcoal/85'
-            : 'bg-charcoal text-white hover:bg-charcoal/85'
-        }`}
+        className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-md transition-all duration-300 bg-charcoal text-white hover:bg-charcoal/85"
         aria-label={isOpen ? 'Close contact panel' : 'Open contact panel'}
       >
-        {isOpen ? <X className="w-5 h-5" /> : <Phone className="w-5 h-5" />}
+        {isOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Phone className="w-4 h-4 sm:w-5 sm:h-5" />}
       </button>
     </div>
   );

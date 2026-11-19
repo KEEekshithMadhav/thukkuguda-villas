@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-charcoal text-white/80">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 pb-14 sm:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
           {/* Brand */}

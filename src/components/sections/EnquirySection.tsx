@@ -47,7 +47,7 @@ const EnquirySection: React.FC = () => {
           </div>
 
           {/* Form panel */}
-          <div className="lg:col-span-3 bg-white p-8 md:p-10">
+          <div className="lg:col-span-3 bg-white p-8 md:p-10 border border-softgrey rounded-sm shadow-xs">
             <EnquiryForm variant="light" />
           </div>
         </div>

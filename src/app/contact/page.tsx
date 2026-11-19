@@ -91,17 +91,17 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                   href={phone.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 border border-emerald-100 bg-emerald-50 hover:bg-emerald-100 transition-colors text-emerald-800 text-sm font-medium"
+                  className="flex items-center gap-3 p-3.5 border border-emerald-200/80 bg-emerald-50/60 hover:bg-emerald-100/60 rounded-sm transition-colors text-emerald-900 text-sm font-medium shadow-2xs"
                 >
                   <MessageCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  {phone.display}
+                  <span>{phone.display} (Direct Chat)</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Right Column: Enquiry Form */}
-          <div className="lg:col-span-3 bg-white border border-softgrey p-8 sm:p-10">
+          <div className="lg:col-span-3 bg-white border border-softgrey p-8 sm:p-10 rounded-sm shadow-xs">
             <div className="mb-8">
               <span className="text-[11px] uppercase tracking-[0.2em] text-taupe font-body font-medium">
                 Online Enquiry

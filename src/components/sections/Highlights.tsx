@@ -22,25 +22,26 @@ const Highlights: React.FC = () => {
         <SectionHeading
           eyebrow="Why Thukkuguda Villas"
           title="Designed for the Way You Live"
+          subtitle="Every aspect of the master community is engineered with intention, prioritizing light, space, and enduring build quality."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-softgrey">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6">
           {features.map((feature, index) => (
             <div
               key={feature}
-              className={`flex gap-5 py-7 px-2 ${
-                index < features.length - 2 ? 'border-b border-softgrey' : ''
-              } ${index % 2 === 0 ? 'md:border-r md:border-softgrey md:pr-8' : 'md:pl-8'}`}
+              className="bg-white border border-softgrey p-6 sm:p-7 flex flex-col justify-between hover:border-taupe/50 hover:shadow-sm transition-all duration-300 rounded-sm group"
             >
-              {/* Number */}
-              <span className="text-xs font-body text-taupe/60 mt-1 w-5 flex-shrink-0 font-medium">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-
-              {/* Content */}
               <div>
-                <h3 className="font-body font-semibold text-charcoal text-sm mb-1.5">{feature}</h3>
-                <p className="text-sm text-charcoal/50 leading-relaxed font-body">
+                <div className="flex items-center justify-between border-b border-softgrey/60 pb-3 mb-4">
+                  <span className="font-heading text-lg sm:text-xl font-semibold text-taupe group-hover:text-charcoal transition-colors">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-softgrey group-hover:bg-taupe transition-colors" />
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-charcoal mb-2 leading-snug">
+                  {feature}
+                </h3>
+                <p className="text-xs sm:text-sm text-charcoal/60 leading-relaxed font-body">
                   {featureDescriptions[feature] || ''}
                 </p>
               </div>

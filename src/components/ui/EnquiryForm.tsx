@@ -143,16 +143,16 @@ export default function EnquiryForm({
   // ── Shared input styles ───────────────────────────────────────────────────
 
   const inputBase = isDark
-    ? 'w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-white/60 focus:outline-none text-sm transition-colors duration-200'
-    : 'w-full px-4 py-3 bg-white border border-softgrey text-charcoal placeholder-charcoal/30 focus:border-charcoal/50 focus:outline-none text-sm transition-colors duration-200'
+    ? 'w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-sm text-white placeholder-white/40 hover:border-white/40 focus:border-white focus:ring-1 focus:ring-white/30 focus:outline-none text-sm transition-all duration-200'
+    : 'w-full px-4 py-3.5 bg-white border border-softgrey rounded-sm text-charcoal placeholder-charcoal/30 hover:border-charcoal/40 focus:border-charcoal focus:ring-1 focus:ring-charcoal/20 focus:outline-none text-sm transition-all duration-200'
 
   const selectBase = isDark
-    ? 'w-full px-4 py-3 bg-white/10 border border-white/20 text-white focus:border-white/60 focus:outline-none text-sm appearance-none transition-colors duration-200'
-    : 'w-full px-4 py-3 bg-white border border-softgrey text-charcoal focus:border-charcoal/50 focus:outline-none text-sm appearance-none transition-colors duration-200'
+    ? 'w-full px-4 py-3.5 pr-10 bg-white/10 border border-white/20 rounded-sm text-white hover:border-white/40 focus:border-white focus:ring-1 focus:ring-white/30 focus:outline-none text-sm appearance-none transition-all duration-200 cursor-pointer'
+    : 'w-full px-4 py-3.5 pr-10 bg-white border border-softgrey rounded-sm text-charcoal hover:border-charcoal/40 focus:border-charcoal focus:ring-1 focus:ring-charcoal/20 focus:outline-none text-sm appearance-none transition-all duration-200 cursor-pointer'
 
   const labelBase = isDark
-    ? 'block mb-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-white/50'
-    : 'block mb-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-charcoal/50'
+    ? 'block mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white/60 font-body'
+    : 'block mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-charcoal/60 font-body'
 
   // ── Success State ─────────────────────────────────────────────────────────
 
@@ -341,16 +341,17 @@ export default function EnquiryForm({
           type="submit"
           disabled={isSubmitting}
           className={`
-            w-full md:w-auto md:min-w-[200px]
+            w-full md:w-auto md:min-w-[220px]
             inline-flex items-center justify-center gap-2
             px-8 py-3.5
-            text-sm font-medium
+            rounded-sm shadow-sm hover:shadow
+            text-sm font-medium tracking-wide
             transition-all duration-200
             focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/40
             disabled:opacity-60 disabled:cursor-not-allowed
             ${isDark
               ? 'bg-white text-charcoal hover:bg-offwhite'
-              : 'bg-charcoal text-white hover:bg-charcoal/85'
+              : 'bg-charcoal text-white hover:bg-charcoal/90'
             }
           `}
         >

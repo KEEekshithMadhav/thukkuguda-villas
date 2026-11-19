@@ -102,10 +102,10 @@ export default function VillasPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-softgrey flex flex-col sm:flex-row items-center gap-3">
+                <div className="pt-4 border-t border-softgrey flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
                     href={`/contact?size=${encodeURIComponent(villa.plotSize)}`}
-                    className="w-full sm:flex-1 py-3 px-4 bg-charcoal text-white text-xs font-medium text-center hover:bg-charcoal/85 transition-all"
+                    className="flex-1 h-11 inline-flex items-center justify-center px-4 bg-charcoal text-white text-xs uppercase tracking-wider font-medium hover:bg-charcoal/85 transition-all rounded-sm shadow-xs"
                   >
                     Enquire – {villa.plotSize}
                   </Link>
@@ -113,9 +113,9 @@ export default function VillasPage() {
                     href={phone1.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto p-3 border border-emerald-200 text-emerald-700 hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2 text-xs font-medium"
+                    className="h-11 inline-flex items-center justify-center gap-2 px-5 border border-emerald-300 bg-emerald-50/50 text-emerald-700 hover:bg-emerald-100/60 transition-colors text-xs font-medium rounded-sm"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-4 h-4 text-emerald-600" />
                     <span>WhatsApp</span>
                   </a>
                 </div>
