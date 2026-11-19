@@ -2,7 +2,6 @@ import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ProjectOverview from '@/components/sections/ProjectOverview';
 import Highlights from '@/components/sections/Highlights';
-import VillaConfigurations from '@/components/sections/VillaConfigurations';
 import VillaExplorer from '@/components/sections/VillaExplorer';
 import MasterPlan from '@/components/sections/MasterPlan';
 import Amenities from '@/components/sections/Amenities';
@@ -22,25 +21,22 @@ export default function HomePage() {
       {/* 3. Project Highlights */}
       <Highlights />
 
-      {/* 4. Villa Configurations */}
-      <VillaConfigurations />
-
-      {/* 5. Interactive Villa Exploration */}
+      {/* 4. Interactive Villa Exploration */}
       <VillaExplorer />
 
-      {/* 6. Master Plan Viewer */}
+      {/* 5. Master Plan Viewer */}
       <MasterPlan />
 
-      {/* 7. Amenities */}
+      {/* 6. Amenities */}
       <Amenities />
 
-      {/* 8. Architectural Gallery */}
+      {/* 7. Architectural Gallery */}
       <ArchitecturalGallery />
 
-      {/* 9. Location & Connectivity */}
+      {/* 8. Location & Connectivity */}
       <LocationSection />
 
-      {/* 10. Enquiry Section */}
+      {/* 9. Enquiry Section */}
       <EnquirySection />
     </>
   );
