@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { projectData } from '@/data/project';
@@ -10,6 +9,7 @@ import { projectData } from '@/data/project';
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Villas', href: '/villas' },
+  { name: 'Amenities', href: '/#amenities' },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Location', href: '/location' },
   { name: 'Contact', href: '/contact' },
@@ -43,39 +43,15 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Identity: Thukkuguda Villas | NexHouz */}
-          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-            <Link href="/" className="group flex flex-col flex-shrink-0">
-              <span className="font-heading text-lg sm:text-2xl font-semibold tracking-wide text-charcoal group-hover:text-taupe transition-colors duration-300 whitespace-nowrap">
-                Thukkuguda <span className="italic font-normal">Villas</span>
-              </span>
-              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-taupe -mt-0.5 font-body whitespace-nowrap">
-                24 Acres · Gated Community
-              </span>
-            </Link>
-
-            {/* Subtle Vertical Divider */}
-            <span className="h-6 sm:h-8 w-px bg-softgrey flex-shrink-0" aria-hidden="true" />
-
-            {/* NexHouz Logo */}
-            <a
-              href="https://nexhouz.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-85 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 flex items-center"
-              title="NexHouz"
-              aria-label="NexHouz"
-            >
-              <Image
-                src="/images/nexhouz-logo.png"
-                alt="NexHouz"
-                width={120}
-                height={38}
-                priority
-                className="object-contain w-14 sm:w-20 md:w-28 h-auto"
-              />
-            </a>
-          </div>
+          {/* Brand Identity */}
+          <Link href="/" className="group flex flex-col flex-shrink-0">
+            <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-charcoal group-hover:text-taupe transition-colors duration-300 whitespace-nowrap">
+              Thukkuguda <span className="italic font-normal">Villas</span>
+            </span>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-taupe -mt-0.5 font-body whitespace-nowrap">
+              24 Acres · Gated Community
+            </span>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">

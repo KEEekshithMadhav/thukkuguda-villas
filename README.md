@@ -61,7 +61,7 @@
 
 ```bash
 # Clone or navigate to the project
-cd "d:\NexHouz\Thukkuguda Villas"
+cd thukkuguda-villas
 
 # Install dependencies
 npm install --legacy-peer-deps
@@ -170,4 +170,4 @@ public/
 
 ## License
 
-© 2024 NexHouz. All rights reserved. Unauthorized reproduction or distribution of any content from this website is strictly prohibited.
+© 2024 Thukkuguda Villas. All rights reserved. Unauthorized reproduction or distribution of any content from this website is strictly prohibited.

@@ -21,11 +21,10 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/images/nexhouz-logo.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: "/favicon.png",
-    shortcut: "/favicon.png",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
   formatDetection: {
     email: false,
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
       "202 premium villas across 24 acres in Tukkuguda, South Hyderabad. Plots from 267–400 Sq. Yds with 40-ft roads and grand clubhouse.",
     images: [
       {
-        url: "/images/hero/hero-bg.svg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Thukkuguda Villas — Premium Gated Community, Hyderabad",
@@ -54,7 +53,7 @@ export const metadata: Metadata = {
     title: "Thukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
     description:
       "202 premium villas across 24 acres in Tukkuguda, South Hyderabad.",
-    images: ["/images/hero/hero-bg.svg"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,

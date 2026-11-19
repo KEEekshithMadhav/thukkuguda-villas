@@ -3,7 +3,6 @@ import { MessageCircle, MapPin, Clock, Shield } from 'lucide-react';
 import EnquiryForm from '@/components/ui/EnquiryForm';
 import PhoneButtons from '@/components/ui/PhoneButtons';
 import { projectData } from '@/data/project';
-import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export const metadata: Metadata = {
   title: 'Contact Sales & Site Visits | Thukkuguda Villas – Hyderabad',
@@ -31,9 +30,6 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-
-      {/* NexHouz watermark in natural whitespace */}
-      <NexHouzWatermark />
 
       {/* Main Contact Section */}
       <section className="py-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">

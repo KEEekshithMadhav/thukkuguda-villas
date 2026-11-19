@@ -13,7 +13,6 @@ import {
 import { locationHighlights } from '@/data/location';
 import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
-import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export const metadata: Metadata = {
   title: 'Location & Connectivity | Thukkuguda Villas – South Hyderabad',
@@ -49,37 +48,26 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* Map Images */}
+      {/* Master Connectivity Map */}
       <section className="pt-16 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+        <div className="rounded-2xl overflow-hidden border border-softgrey bg-white shadow-sm">
+          <div className="relative aspect-[16/9] overflow-hidden bg-stone">
             <Image
-              src="/images/location/connectivity-route.jpg"
-              alt="Thukkuguda Villas – Road Connectivity to ORR and Airport"
+              src="/images/location/master-connectivity-map.jpg"
+              alt="Thukkuguda Villas – Comprehensive Regional Connectivity & Travel Times Map"
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain sm:object-cover"
+              sizes="100vw"
+              priority
             />
           </div>
-          <div className="grid grid-rows-2 gap-4">
-            <div className="relative aspect-video overflow-hidden bg-stone">
-              <Image
-                src="/images/location/aerial-context.jpg"
-                alt="Thukkuguda Villas – Aerial Context View"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 25vw"
-              />
-            </div>
-            <div className="relative aspect-video overflow-hidden bg-stone">
-              <Image
-                src="/images/location/site-aerial.jpg"
-                alt="Thukkuguda Villas – Site Aerial"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 25vw"
-              />
-            </div>
+          <div className="p-4 sm:p-5 bg-white border-t border-softgrey flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-charcoal/60 font-body">
+            <span className="font-medium text-charcoal">
+              Connected to Everything That Matters — Regional Infrastructure Map
+            </span>
+            <span className="text-taupe font-medium">
+              Outer Ring Road (ORR) · RGIA Airport · WTC · Financial District
+            </span>
           </div>
         </div>
       </section>
@@ -119,9 +107,6 @@ export default function LocationPage() {
           })}
         </div>
       </section>
-
-      {/* NexHouz watermark in natural whitespace */}
-      <NexHouzWatermark />
 
       {/* South Hyderabad Narrative */}
       <section className="py-20 bg-stone border-y border-softgrey">

@@ -19,25 +19,21 @@ const LocationSection: React.FC = () => {
     <section className="bg-offwhite py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Map image */}
-          <div className="relative">
-            <div className="aspect-[4/3] relative overflow-hidden bg-stone">
+          {/* Master Connectivity Map image */}
+          <div className="relative rounded-2xl overflow-hidden border border-softgrey bg-white shadow-xs group">
+            <div className="relative aspect-[16/10] overflow-hidden bg-stone">
               <Image
-                src="/images/location/connectivity-route.jpg"
-                alt="Thukkuguda Villas – Connectivity Map"
+                src="/images/location/master-connectivity-map.jpg"
+                alt="Thukkuguda Villas – Regional Connectivity and Travel Times Map"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
             </div>
-            <div className="mt-4">
-              <Image
-                src="/images/location/aerial-context.jpg"
-                alt="Thukkuguda Villas – Aerial Context"
-                width={686}
-                height={385}
-                className="w-full object-cover"
-              />
+            <div className="p-4 bg-white border-t border-softgrey flex items-center justify-between text-xs text-charcoal/60 font-body">
+              <span>High-Resolution Regional Transit Map</span>
+              <span className="text-taupe font-medium">Tukkuguda · ORR · RGIA</span>
             </div>
           </div>
 

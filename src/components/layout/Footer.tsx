@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, MessageCircle, MapPin } from 'lucide-react';
 import { projectData } from '@/data/project';
 
@@ -10,6 +9,7 @@ const Footer: React.FC = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Villas', href: '/villas' },
+    { name: 'Amenities', href: '/#amenities' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Location', href: '/location' },
     { name: 'Contact', href: '/contact' },
@@ -110,32 +110,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* NexHouz */}
+          {/* Connectivity Highlights */}
           <div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-taupe font-medium mb-5">Marketing by</p>
-            <a
-              href="https://nexhouz.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block opacity-80 hover:opacity-100 transition-opacity duration-300"
-              title="NexHouz"
-            >
-              <Image
-                src="/images/nexhouz-logo.png"
-                alt="NexHouz"
-                width={160}
-                height={50}
-                className="object-contain"
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-            </a>
-            <div className="mt-3 space-y-1">
-              <p className="text-xs text-white/30 leading-relaxed">
-                B-609, B Block, Asian Sun City,<br />
-                Kothaguda X Road, Kondapur,<br />
-                Hyderabad 500084
-              </p>
-            </div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-taupe font-medium mb-5">Connectivity</p>
+            <ul className="space-y-2.5 text-xs text-white/50 font-body">
+              <li>• 5 mins to Outer Ring Road (ORR)</li>
+              <li>• 10 mins to RGIA Hyderabad Airport</li>
+              <li>• 8–15 mins to International Schools</li>
+              <li>• 25 mins to Financial District</li>
+            </ul>
+            <p className="text-[11px] text-taupe mt-4 font-body">Tukkuguda (Mankhal), South Hyderabad</p>
           </div>
         </div>
 

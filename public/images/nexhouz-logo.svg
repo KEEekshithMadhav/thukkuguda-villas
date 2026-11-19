@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
-  <!-- House icon -->
-  <path d="M14 28 L14 40 L26 40 L26 28 Z" fill="#30302E"/>
-  <path d="M10 30 L20 18 L30 30" stroke="#30302E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="17" y="31" width="6" height="9" fill="#F7F6F2" rx="0.5"/>
-  <!-- N -->
-  <text x="36" y="34" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="18" fill="#30302E" letter-spacing="-0.5">NexHouz</text>
-</svg>

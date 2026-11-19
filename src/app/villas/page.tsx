@@ -5,7 +5,6 @@ import { MessageCircle, Check } from 'lucide-react';
 import { villaConfigurations } from '@/data/villas';
 import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
-import NexHouzWatermark from '@/components/ui/NexHouzWatermark';
 
 export const metadata: Metadata = {
   title: 'Villa Configurations | Thukkuguda Villas – Hyderabad',
@@ -125,9 +124,6 @@ export default function VillasPage() {
           ))}
         </div>
       </section>
-
-      {/* NexHouz watermark in natural whitespace */}
-      <NexHouzWatermark />
 
       {/* Stats Banner */}
       <section className="bg-charcoal text-white py-16">
