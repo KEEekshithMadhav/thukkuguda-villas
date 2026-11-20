@@ -114,8 +114,8 @@ export const galleryItems: GalleryItem[] = [
     category: "location",
     title: "Regional Connectivity & Infrastructure Map",
     description: "Infographic map detailing immediate access to ORR Exit-14 (5 mins), RGIA Airport (10 mins), WTC (10 mins), and premier international schools.",
-    width: 1920,
-    height: 1080,
+    width: 1024,
+    height: 512,
   },
   {
     id: "loc-context",

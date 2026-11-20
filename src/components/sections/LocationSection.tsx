@@ -22,7 +22,7 @@ const LocationSection: React.FC = () => {
           {/* Master Connectivity Map column */}
           <div className="lg:sticky lg:top-28 space-y-5">
             <div className="relative rounded-xl overflow-hidden border border-softgrey bg-white shadow-sm group">
-              <div className="relative aspect-[16/10] overflow-hidden bg-stone">
+              <div className="relative aspect-[2/1] overflow-hidden bg-stone">
                 <Image
                   src="/images/location/master-connectivity-map.jpg"
                   alt="Tukkuguda Villas – Regional Connectivity and Travel Times Map"

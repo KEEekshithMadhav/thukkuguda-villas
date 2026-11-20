@@ -51,7 +51,7 @@ export default function LocationPage() {
       {/* Master Connectivity Map */}
       <section className="pt-16 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="rounded-2xl overflow-hidden border border-softgrey bg-white shadow-sm">
-          <div className="relative aspect-[16/9] overflow-hidden bg-stone">
+          <div className="relative aspect-[2/1] overflow-hidden bg-stone">
             <Image
               src="/images/location/master-connectivity-map.jpg"
               alt="Tukkuguda Villas – Comprehensive Regional Connectivity & Travel Times Map"
