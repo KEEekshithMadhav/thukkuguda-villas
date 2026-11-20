@@ -4,14 +4,12 @@ export interface Amenity {
   category:
     | 'Recreation & Sports'
     | 'Wellness'
-    | 'Convenience'
     | 'Community & Entertainment'
     | 'Premium Villa Features'
     | 'Outdoor Lifestyle';
   categoryKey:
     | 'recreation-sports'
     | 'wellness'
-    | 'convenience'
     | 'community-entertainment'
     | 'villa-features'
     | 'outdoor-lifestyle';
@@ -25,7 +23,6 @@ export const amenityCategories = [
   { key: 'all', label: 'All Curated Amenities' },
   { key: 'recreation-sports', label: 'Recreation & Sports' },
   { key: 'wellness', label: 'Wellness' },
-  { key: 'convenience', label: 'Convenience' },
   { key: 'community-entertainment', label: 'Community & Entertainment' },
   { key: 'villa-features', label: 'Premium Villa Features' },
   { key: 'outdoor-lifestyle', label: 'Outdoor Lifestyle' },
@@ -34,131 +31,144 @@ export const amenityCategories = [
 export const amenitiesList: Amenity[] = [
   // ─── Recreation & Sports ──────────────────────────────────────────────────
   {
-    id: 'badminton-court',
-    title: 'Badminton Court',
+    id: 'snooker-games-lounge',
+    title: 'Billiards & Indoor Games Lounge',
     category: 'Recreation & Sports',
     categoryKey: 'recreation-sports',
-    image: '/images/interiors/imgi_31_badminton.jpg',
+    image: '/images/interiors/indoor-games-snooker.jpg',
     description:
-      'High-ceiling indoor badminton facility designed with tournament-standard wooden flooring and glare-free illumination for year-round active play.',
-    highlights: ['Tournament Wooden Flooring', 'Glare-Free LED Lighting', 'High-Clearance Ceiling'],
-    featured: false,
+      'An exclusive club-level indoor games suite featuring a tournament-grade snooker table, pendant illumination, leather lounge seating, and an integrated refreshment bar.',
+    highlights: ['Tournament-Grade Snooker Table', 'Executive Leather Lounge', 'Clubhouse Refreshment Bar'],
+    featured: true,
   },
   {
-    id: 'sports-recreation-area',
-    title: 'Sports and Recreation Area',
+    id: 'sports-recreation-circuit',
+    title: 'Sports & Recreation Circuit',
     category: 'Recreation & Sports',
     categoryKey: 'recreation-sports',
-    image: '/images/interiors/imgi_44_z4-play-800w.jpg',
+    image: '/images/interiors/sports-circuit.jpg',
     description:
       'Dedicated multi-sport synthetic arena and outdoor fitness perimeter framed by landscaped corridors, ideal for morning sprint routines and athletic training.',
-    highlights: ['All-Weather Synthetic Turf', 'Outdoor Fitness Circuit', 'Dedicated Sprint & Jog Lane'],
+    highlights: ['All-Weather Synthetic Track', 'Outdoor Fitness Circuit', 'Dedicated Sprint & Jog Lane'],
     featured: false,
-  },
-  {
-    id: 'childrens-play-area',
-    title: "Children's Play Area",
-    category: 'Recreation & Sports',
-    categoryKey: 'recreation-sports',
-    image: '/images/interiors/imgi_73_play-1200w.jpg',
-    description:
-      'Thoughtfully planned outdoor activity park featuring shock-absorbing play zones, climbing structures, and shaded bench pergolas for parents.',
-    highlights: ['Child-Safe Impact Turf', 'Creative Play Structures', 'Shaded Family Pavilion'],
-    featured: true,
   },
 
   // ─── Wellness ─────────────────────────────────────────────────────────────
   {
-    id: 'yoga-meditation-hall',
-    title: 'Yoga and Meditation Hall',
+    id: 'yoga-meditation-sanctuary',
+    title: 'Yoga and Meditation Sanctuary',
     category: 'Wellness',
     categoryKey: 'wellness',
-    image: '/images/interiors/imgi_28_yoga-hall-v2.jpg',
+    image: '/images/interiors/yoga-studio.jpg',
     description:
-      'Serene, sun-drenched sanctuary with sound-insulated acoustic paneling, polished teakwood floors, and floor-to-ceiling glass framing tranquil outdoor gardens.',
-    highlights: ['Natural Ambient Light', 'Acoustic Sound Insulation', 'Polished Timber Flooring'],
+      'A sun-drenched architectural wellness pavilion with full-height garden glazing, recessed ambient halo illumination, natural timber flooring, and sound-insulating acoustic finishes.',
+    highlights: ['Backlit Zen Feature Wall', 'Full-Height Garden Glazing', 'Natural Hardwood Flooring'],
     featured: true,
-  },
-
-  // ─── Convenience ──────────────────────────────────────────────────────────
-  {
-    id: 'convenience-store',
-    title: 'Convenience Store',
-    category: 'Convenience',
-    categoryKey: 'convenience',
-    image: '/images/interiors/imgi_34_provisional-store.jpg',
-    description:
-      'On-site daily provisions and grocery boutique situated within the community clubhouse, offering residents seamless everyday essentials without leaving the gates.',
-    highlights: ['Daily Essentials & Groceries', 'Clubhouse Concierge Access', 'Gated Community Exclusivity'],
-    featured: false,
   },
 
   // ─── Community & Entertainment ────────────────────────────────────────────
   {
     id: 'banquet-hall',
-    title: 'Banquet Hall',
+    title: 'Grand Banquet Hall',
     category: 'Community & Entertainment',
     categoryKey: 'community-entertainment',
-    image: '/images/interiors/imgi_29_banquet-hall.jpg',
+    image: '/images/interiors/banquet-hall.png',
     description:
-      'Grand celebration venue featuring bespoke crystal chandeliers, integrated audio-visual infrastructure, and an adjoining private pre-function catering deck.',
-    highlights: ['Double-Height Volume', 'Dedicated Catering Pantry', 'Integrated Audio-Visual Setup'],
+      'A majestic celebratory venue featuring golden architectural accents, geometric coffered ceiling lighting, crystal chandeliers, and an adjoining private pre-function catering deck.',
+    highlights: ['Double-Height Volume', 'Bespoke Golden Detailing', 'Pre-Function Catering Area'],
     featured: true,
   },
 
   // ─── Premium Villa Features ───────────────────────────────────────────────
   {
+    id: 'private-mandir-puja-room',
+    title: 'Private Mandir & Puja Room',
+    category: 'Premium Villa Features',
+    categoryKey: 'villa-features',
+    image: '/images/interiors/puja-room.jpg',
+    description:
+      'A serene prayer sanctum detailed with a backlit carved jaali arch, polished marble pedestal, hanging brass bells, and bespoke handcrafted teakwood niches for daily devotion.',
+    highlights: ['Strict Vastu-Aligned Orientation', 'Backlit Carved Jaali Arch', 'Handcrafted Teakwood Niches'],
+    featured: true,
+  },
+  {
+    id: 'master-bedroom-suite',
+    title: 'Master Bedroom Suite',
+    category: 'Premium Villa Features',
+    categoryKey: 'villa-features',
+    image: '/images/interiors/master-bedroom.jpg',
+    description:
+      'A calming sanctuary featuring concealed headboard cove lighting, warm natural oak wood accents, plush finishes, and floor-to-ceiling glass framing private balcony views.',
+    highlights: ['Concealed Architectural Cove Lighting', 'Warm Natural Oak Paneling', 'Expansive Balcony Glazing'],
+    featured: true,
+  },
+  {
     id: 'elegant-living-spaces',
     title: 'Elegant Living Spaces',
     category: 'Premium Villa Features',
     categoryKey: 'villa-features',
-    image: '/images/interiors/imgi_53_air-light-living-800w.jpg',
+    image: '/images/interiors/living-spaces.jpg',
     description:
       'Grand formal living pavilions with soaring ceiling heights, Italian-format marble tiling, and full-height architectural fenestrations that welcome abundant natural cross-ventilation.',
     highlights: ['Double-Height Spatial Volume', 'Full-Height Glass Facades', 'Seamless Courtyard Views'],
-    featured: true,
-  },
-  {
-    id: 'private-puja-room',
-    title: 'Private Puja Room',
-    category: 'Premium Villa Features',
-    categoryKey: 'villa-features',
-    image: '/images/interiors/imgi_57_puja-room-v3-800w.jpg',
-    description:
-      'Sacred, traditionally oriented prayer sanctum detailed with handcrafted ornamental stone lattice backdrops, brass accents, and serene ambient warm-glow lighting.',
-    highlights: ['Strict Vastu-Aligned Orientation', 'Artisan Carved Lattice Work', 'Tranquil Acoustic Setting'],
     featured: false,
   },
   {
-    id: 'private-lift',
-    title: 'Private Lift',
+    id: 'formal-dining-lounge',
+    title: 'Formal Dining & Family Lounge',
     category: 'Premium Villa Features',
     categoryKey: 'villa-features',
-    image: '/images/interiors/imgi_23_private-lift.jpg',
+    image: '/images/interiors/dining-lounge.jpg',
     description:
-      'Seamless multi-level internal elevator offering whisper-quiet vertical transit across all villa floors, framed by polished architectural metallic trims and safety sensors.',
-    highlights: ['Whisper-Quiet Electric Drive', 'All-Floor Villa Connectivity', 'Modern Architectural Cabin'],
+      'Spacious open-concept dining hall with polished marble floors and designer chandelier, connecting seamlessly to internal living zones and outdoor garden terraces.',
+    highlights: ['Italian Marble Flooring', 'Full-Size 8-Seater Dining Space', 'Seamless Garden Terrace Access'],
     featured: false,
   },
 
   // ─── Outdoor Lifestyle ────────────────────────────────────────────────────
   {
-    id: 'landscaped-deck',
-    title: 'Landscaped Deck',
+    id: 'central-community-park',
+    title: 'Central Community Park & Lawn',
     category: 'Outdoor Lifestyle',
     categoryKey: 'outdoor-lifestyle',
-    image: '/images/interiors/imgi_74_deck-1200w.jpg',
+    image: '/images/interiors/community-lawn.jpg',
     description:
-      'Elevated open-air leisure deck framed by seamless glass railings and tropical greenery, creating an effortless al fresco transition for evening entertaining.',
-    highlights: ['Weather-Shielded Timber Deck', 'Frameless Glass Balustrades', 'Al Fresco Lounge Seating'],
+      'An expansive, manicured central community lawn and green park surrounded by villa avenues, featuring sculptural viewing pavilions and paved walking promenades.',
+    highlights: ['Manicured Central Green Lawn', 'Sculptural Viewing Pavilions', 'Paved Walking Promenades'],
     featured: true,
   },
+
+  // ─── Premium Villa Features (Continued) ───────────────────────────────────
+  {
+    id: 'private-lift',
+    title: 'Private Internal Lift',
+    category: 'Premium Villa Features',
+    categoryKey: 'villa-features',
+    image: '/images/interiors/private-lift.jpg',
+    description:
+      'Seamless multi-level internal elevator offering whisper-quiet vertical transit across all villa floors, framed by polished architectural metallic trims and safety sensors.',
+    highlights: ['Whisper-Quiet Electric Drive', 'All-Floor Villa Connectivity', 'Modern Architectural Cabin'],
+    featured: false,
+  },
+  {
+    id: 'open-plan-living-verandah',
+    title: 'Living & Verandah Lounge',
+    category: 'Premium Villa Features',
+    categoryKey: 'villa-features',
+    image: '/images/interiors/living-verandah.jpg',
+    description:
+      'Naturally illuminated family entertainment lounge featuring dual sliding glass doors that open directly onto private green lawns and landscaped perimeters.',
+    highlights: ['Dual Sliding Garden Doors', 'Sunlit Living Layout', 'Direct Verandah Transition'],
+    featured: false,
+  },
+
+  // ─── Outdoor Lifestyle (Continued) ────────────────────────────────────────
   {
     id: 'relaxing-outdoor-sit-outs',
     title: 'Relaxing Outdoor Sit-outs',
     category: 'Outdoor Lifestyle',
     categoryKey: 'outdoor-lifestyle',
-    image: '/images/interiors/imgi_75_sitouts-1200w.jpg',
+    image: '/images/interiors/outdoor-sitouts.jpg',
     description:
       'Deep architectural verandahs and cantilevered garden patios sheltered from the afternoon sun, overlooking manicured private lawn avenues and perimeter foliage.',
     highlights: ['Cantilevered Shade Canopies', 'Manicured Lawn Frontage', 'Private Garden Reticence'],

@@ -10,7 +10,6 @@ import {
   X,
   Dumbbell,
   HeartPulse,
-  ShoppingBag,
   Users,
   Home,
   SunMedium,
@@ -20,7 +19,6 @@ import { amenitiesList, amenityCategories, Amenity } from '@/data/amenities';
 const categoryIcons: Record<string, React.ElementType> = {
   'recreation-sports': Dumbbell,
   wellness: HeartPulse,
-  convenience: ShoppingBag,
   'community-entertainment': Users,
   'villa-features': Home,
   'outdoor-lifestyle': SunMedium,
@@ -79,7 +77,7 @@ const Amenities: React.FC = () => {
           <AnimatePresence>
             {filteredAmenities.map((amenity, index) => {
               const Icon = categoryIcons[amenity.categoryKey] || Sparkles;
-              const isFeatureCard = activeCategory === 'all' && (index === 0 || index === 3 || index === 6);
+              const isFeatureCard = activeCategory === 'all' && (index === 0 || index === 3 || index === 8);
 
               return (
                 <motion.div
