@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 xl:space-x-8">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -73,14 +73,23 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Desktop Contact Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-2.5">
             <a
               href={phone1.tel}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-charcoal/70 hover:text-charcoal border border-softgrey hover:border-charcoal/40 transition-all duration-200 rounded"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-charcoal/70 hover:text-charcoal border border-softgrey hover:border-charcoal/40 transition-all duration-200 rounded"
               title={`Call: ${phone1.display}`}
             >
-              <Phone className="w-3 h-3" />
+              <Phone className="w-3 h-3 text-taupe" />
               <span>{phone1.display}</span>
+            </a>
+
+            <a
+              href={phone3.tel}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-charcoal/70 hover:text-charcoal border border-softgrey hover:border-charcoal/40 transition-all duration-200 rounded"
+              title={`Call: ${phone3.display}`}
+            >
+              <Phone className="w-3 h-3 text-taupe" />
+              <span>{phone3.display}</span>
             </a>
 
             <a
@@ -96,7 +105,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               href="/contact"
-              className="px-4 py-1.5 text-xs font-medium border border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-all duration-200 rounded"
+              className="px-3.5 py-1.5 text-xs font-medium border border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-all duration-200 rounded"
             >
               Enquire
             </Link>
