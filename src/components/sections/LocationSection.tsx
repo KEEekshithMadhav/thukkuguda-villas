@@ -25,7 +25,7 @@ const LocationSection: React.FC = () => {
               <div className="relative aspect-[16/10] overflow-hidden bg-stone">
                 <Image
                   src="/images/location/master-connectivity-map.jpg"
-                  alt="Thukkuguda Villas – Regional Connectivity and Travel Times Map"
+                  alt="Tukkuguda Villas – Regional Connectivity and Travel Times Map"
                   fill
                   className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 50vw"

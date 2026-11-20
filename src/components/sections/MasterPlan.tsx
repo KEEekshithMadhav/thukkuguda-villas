@@ -49,7 +49,7 @@ const MasterPlan: React.FC = () => {
               <div className="aspect-[16/10] relative overflow-hidden bg-white">
                 <Image
                   src="/images/master-plan/master-plan.jpg"
-                  alt="Thukkuguda Villas Master Plan"
+                  alt="Tukkuguda Villas Master Plan"
                   fill
                   className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -88,7 +88,7 @@ const MasterPlan: React.FC = () => {
           >
             <Image
               src="/images/master-plan/master-plan.jpg"
-              alt="Thukkuguda Villas Master Plan – Full View"
+              alt="Tukkuguda Villas Master Plan – Full View"
               width={1024}
               height={599}
               className="w-full h-auto object-contain"

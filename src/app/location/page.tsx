@@ -15,7 +15,7 @@ import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
 
 export const metadata: Metadata = {
-  title: 'Location & Connectivity | Thukkuguda Villas – South Hyderabad',
+  title: 'Location & Connectivity | Tukkuguda Villas – South Hyderabad',
   description:
     'Strategically situated in Tukkuguda (Mankhal), South Hyderabad. 5 minutes to ORR, 10 minutes to RGIA Airport, 5 minutes to Metro Station, and close to international schools.',
 };
@@ -54,7 +54,7 @@ export default function LocationPage() {
           <div className="relative aspect-[16/9] overflow-hidden bg-stone">
             <Image
               src="/images/location/master-connectivity-map.jpg"
-              alt="Thukkuguda Villas – Comprehensive Regional Connectivity & Travel Times Map"
+              alt="Tukkuguda Villas – Comprehensive Regional Connectivity & Travel Times Map"
               fill
               className="object-contain sm:object-cover"
               sizes="100vw"

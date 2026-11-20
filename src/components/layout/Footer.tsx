@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <span className="font-heading text-2xl font-semibold text-white">
-                Thukkuguda <span className="italic font-normal">Villas</span>
+                Tukkuguda <span className="italic font-normal">Villas</span>
               </span>
             </Link>
             <div className="flex items-start gap-2 mt-3">
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Thukkuguda Villas. All rights reserved.
+            © {new Date().getFullYear()} Tukkuguda Villas. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {legalLinks.map((link) => (

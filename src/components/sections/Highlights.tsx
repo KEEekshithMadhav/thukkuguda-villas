@@ -20,7 +20,7 @@ const Highlights: React.FC = () => {
     <section className="bg-offwhite py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <SectionHeading
-          eyebrow="Why Thukkuguda Villas"
+          eyebrow="Why Tukkuguda Villas"
           title="Designed for the Way You Live"
           subtitle="Every aspect of the master community is engineered with intention, prioritizing light, space, and enduring build quality."
         />

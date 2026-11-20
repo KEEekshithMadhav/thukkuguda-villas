@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { projectData } from '@/data/project';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Thukkuguda Villas',
-  description: 'Privacy Policy for Thukkuguda Villas marketing website and customer enquiries.',
+  title: 'Privacy Policy | Tukkuguda Villas',
+  description: 'Privacy Policy for Tukkuguda Villas marketing website and customer enquiries.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-charcoal">Privacy Policy</h1>
           <p className="text-xs uppercase tracking-[0.2em] text-taupe mt-3 font-medium">
-            Thukkuguda Villas · Last Updated: November 2024
+            Tukkuguda Villas · Last Updated: November 2024
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
               1. Information We Collect
             </h2>
             <p>
-              When you submit an enquiry through the Thukkuguda Villas website, we collect your
+              When you submit an enquiry through the Tukkuguda Villas website, we collect your
               Full Name, Mobile Number, Interested Villa Size, Expected Budget, and
               Message/Requirements. We do not collect payment details, credit card numbers, or
               passwords through this website.

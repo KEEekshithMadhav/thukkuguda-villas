@@ -36,7 +36,7 @@
   <text x="400" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#D4AF7A" letter-spacing="3" font-weight="400">IMAGE COMING SOON</text>
 
   <!-- Subtitle -->
-  <text x="400" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#D4AF7A" letter-spacing="2" opacity="0.6">THUKKUGUDA VILLAS</text>
+  <text x="400" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#D4AF7A" letter-spacing="2" opacity="0.6">TUKKUGUDA VILLAS</text>
 
   <!-- Bottom gold divider -->
   <line x1="340" y1="415" x2="460" y2="415" stroke="#D4AF7A" stroke-width="0.5" opacity="0.5"/>

@@ -23,7 +23,7 @@ const ProjectOverview: React.FC = () => {
             <div className="aspect-[4/5] relative overflow-hidden bg-stone border border-softgrey shadow-sm">
               <Image
                 src="/images/villas/villa-350-ef-01.jpg"
-                alt="Thukkuguda Villas Overview"
+                alt="Tukkuguda Villas Overview"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -41,7 +41,7 @@ const ProjectOverview: React.FC = () => {
             <SectionHeading
               eyebrow="The Project"
               title="A New Standard of Gated Living"
-              subtitle="Thukkuguda Villas is a thoughtfully planned premium gated community in South Hyderabad, designed for families who value space, privacy, and architectural quality."
+              subtitle="Tukkuguda Villas is a thoughtfully planned premium gated community in South Hyderabad, designed for families who value space, privacy, and architectural quality."
             />
 
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-10">
@@ -59,7 +59,7 @@ const ProjectOverview: React.FC = () => {
             <div className="mt-10 pt-8 border-t border-softgrey">
               <p className="text-sm text-charcoal/60 font-body leading-relaxed">
                 Strategically located minutes from ORR, the International Airport, and major schools —
-                Thukkuguda Villas offers exceptional connectivity while maintaining the tranquility
+                Tukkuguda Villas offers exceptional connectivity while maintaining the tranquility
                 of a low-density gated community.
               </p>
             </div>

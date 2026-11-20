@@ -35,18 +35,17 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-sm border-b border-softgrey py-3'
-          : 'bg-white/90 backdrop-blur-sm border-b border-softgrey/60 py-4'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-sm border-b border-softgrey py-3'
+        : 'bg-white/90 backdrop-blur-sm border-b border-softgrey/60 py-4'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Identity */}
           <Link href="/" className="group flex flex-col flex-shrink-0">
             <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-charcoal group-hover:text-taupe transition-colors duration-300 whitespace-nowrap">
-              Thukkuguda <span className="italic font-normal">Villas</span>
+              Tukkuguda <span className="italic font-normal">Villas</span>
             </span>
             <span className="text-[9px] uppercase tracking-[0.25em] text-taupe -mt-0.5 font-body whitespace-nowrap">
               24 Acres · Gated Community
@@ -61,9 +60,8 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 relative py-1.5 font-body ${
-                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/65 hover:text-charcoal'
-                  }`}
+                  className={`text-sm font-medium transition-colors duration-200 relative py-1.5 font-body ${isActive ? 'text-charcoal font-semibold' : 'text-charcoal/65 hover:text-charcoal'
+                    }`}
                 >
                   {link.name}
                   {isActive && (
@@ -126,9 +124,8 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`py-3 text-sm font-body tracking-wide transition-colors flex items-center justify-between ${
-                    isActive ? 'text-charcoal font-semibold' : 'text-charcoal/70 hover:text-charcoal'
-                  }`}
+                  className={`py-3 text-sm font-body tracking-wide transition-colors flex items-center justify-between ${isActive ? 'text-charcoal font-semibold' : 'text-charcoal/70 hover:text-charcoal'
+                    }`}
                 >
                   <span>{link.name}</span>
                   {isActive && <span className="w-1.5 h-1.5 rounded-full bg-charcoal" />}

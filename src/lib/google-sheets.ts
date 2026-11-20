@@ -2,7 +2,7 @@
 import 'server-only'
 
 /**
- * Thukkuguda Villas
+ * Tukkuguda Villas
  * Google Sheets Enquiry Integration
  *
  * Server-side utility only.

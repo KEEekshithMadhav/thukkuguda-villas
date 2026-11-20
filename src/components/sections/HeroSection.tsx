@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/hero-villa.jpg"
-          alt="Thukkuguda Villas – Premium Villa Architecture"
+          alt="Tukkuguda Villas – Premium Villa Architecture"
           fill
           className="object-cover object-center"
           priority
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
 
         {/* Title */}
         <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] mb-4 max-w-3xl">
-          Thukkuguda
+          Tukkuguda
           <br />
           <span className="italic font-normal text-white/85">Villas</span>
         </h1>

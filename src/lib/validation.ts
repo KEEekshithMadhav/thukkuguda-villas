@@ -1,5 +1,5 @@
 /**
- * Validation utilities for Thukkuguda Villas enquiry form
+ * Validation utilities for Tukkuguda Villas enquiry form
  */
 
 /**

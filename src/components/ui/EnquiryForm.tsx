@@ -175,7 +175,7 @@ export default function EnquiryForm({
             Enquiry Received
           </h3>
           <p className={`text-sm leading-relaxed max-w-sm ${isDark ? 'text-white/60' : 'text-charcoal/60'}`}>
-            Our team will reach out to you shortly. Thank you for your interest in Thukkuguda Villas.
+            Our team will reach out to you shortly. Thank you for your interest in Tukkuguda Villas.
           </p>
         </div>
         <button

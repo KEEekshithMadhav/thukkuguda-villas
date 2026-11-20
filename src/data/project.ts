@@ -1,5 +1,5 @@
 export const projectData = {
-  name: "Thukkuguda Villas",
+  name: "Tukkuguda Villas",
   location: "Tukkuguda (Mankhal), South Hyderabad, Telangana, India",
   tagline: "Premium Gated Villa Community",
   totalArea: "24 Acres",

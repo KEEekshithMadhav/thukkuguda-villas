@@ -7,9 +7,9 @@ import { projectData } from '@/data/project';
 import PhoneButtons from '@/components/ui/PhoneButtons';
 
 export const metadata: Metadata = {
-  title: 'Villa Configurations | Thukkuguda Villas – Hyderabad',
+  title: 'Villa Configurations | Tukkuguda Villas – Hyderabad',
   description:
-    'Explore the four exclusive villa sizes at Thukkuguda Villas: 267, 300, 350, and 400 Sq. Yds with built-up areas from 4,222 to 6,000 Sq. Ft.',
+    'Explore the four exclusive villa sizes at Tukkuguda Villas: 267, 300, 350, and 400 Sq. Yds with built-up areas from 4,222 to 6,000 Sq. Ft.',
 };
 
 export default function VillasPage() {

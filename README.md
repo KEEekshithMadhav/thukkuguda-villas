@@ -1,6 +1,6 @@
-# Thukkuguda Villas — Premium Real Estate Website
+# Tukkuguda Villas — Premium Real Estate Website
 
-> Official website for **Thukkuguda Villas**, a premier gated villa community spanning 24 acres in Tukkuguda (Mankhal), South Hyderabad, Telangana.
+> Official website for **Tukkuguda Villas**, a premier gated villa community spanning 24 acres in Tukkuguda (Mankhal), South Hyderabad, Telangana.
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Detail | Value |
 |--------|-------|
-| **Project Name** | Thukkuguda Villas |
+| **Project Name** | Tukkuguda Villas |
 | **Location** | Tukkuguda (Mankhal), South Hyderabad |
 | **Total Area** | 24 Acres |
 | **Total Villas** | 202 |
@@ -61,7 +61,7 @@
 
 ```bash
 # Clone or navigate to the project
-cd thukkuguda-villas
+cd tukkuguda-villas
 
 # Install dependencies
 npm install --legacy-peer-deps
@@ -163,11 +163,11 @@ public/
 
 - **Phone 1:** +91 98858 58529
 - **Phone 2:** +91 85858 54853
-- **Email:** info@thukkugudavillas.com
+- **Email:** info@tukkugudavillas.com
 - **Address:** Tukkuguda (Mankhal), South Hyderabad, Telangana – 501 359
 
 ---
 
 ## License
 
-© 2024 Thukkuguda Villas. All rights reserved. Unauthorized reproduction or distribution of any content from this website is strictly prohibited.
+© 2024 Tukkuguda Villas. All rights reserved. Unauthorized reproduction or distribution of any content from this website is strictly prohibited.

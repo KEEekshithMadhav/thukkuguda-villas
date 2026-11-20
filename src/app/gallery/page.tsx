@@ -45,7 +45,7 @@ export default function GalleryPage() {
             Architectural Gallery
           </h1>
           <p className="text-base sm:text-lg text-charcoal/50 max-w-2xl leading-relaxed font-body">
-            Villa elevations, the master site plan, and aerial location imagery from Thukkuguda Villas.
+            Villa elevations, the master site plan, and aerial location imagery from Tukkuguda Villas.
           </p>
         </div>
       </section>

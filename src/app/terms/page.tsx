@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { projectData } from '@/data/project';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | Thukkuguda Villas',
-  description: 'Terms and Conditions for Thukkuguda Villas informational website.',
+  title: 'Terms & Conditions | Tukkuguda Villas',
+  description: 'Terms and Conditions for Tukkuguda Villas informational website.',
 };
 
 export default function TermsPage() {
@@ -16,7 +16,7 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-charcoal">Terms & Conditions</h1>
           <p className="text-xs uppercase tracking-[0.2em] text-taupe mt-3 font-medium">
-            Thukkuguda Villas · Last Updated: November 2024
+            Tukkuguda Villas · Last Updated: November 2024
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function TermsPage() {
             </h2>
             <p>
               Submission of an enquiry through our website registers your intent to receive
-              information about Thukkuguda Villas. It does not constitute a reservation, booking,
+              information about Tukkuguda Villas. It does not constitute a reservation, booking,
               or financial commitment in any form. All formal agreements are executed in person
               and in writing.
             </p>

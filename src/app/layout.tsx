@@ -5,12 +5,12 @@ import Footer from "@/components/layout/Footer";
 import FloatingContact from "@/components/ui/FloatingContact";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thukkugudavillas.com"),
-  title: "Thukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
+  metadataBase: new URL("https://tukkugudavillas.com"),
+  title: "Tukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
   description:
-    "Thukkuguda Villas — 202 luxury villas spread across 24 acres in Tukkuguda (Mankhal), South Hyderabad. Plots from 267–400 Sq. Yds with 40-ft roads, grand clubhouse, and landscaped avenues.",
+    "Tukkuguda Villas — 202 luxury villas spread across 24 acres in Tukkuguda (Mankhal), South Hyderabad. Plots from 267–400 Sq. Yds with 40-ft roads, grand clubhouse, and landscaped avenues.",
   keywords: [
-    "Thukkuguda Villas",
+    "Tukkuguda Villas",
     "Tukkuguda villas",
     "premium villas Hyderabad",
     "gated community Hyderabad",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://thukkugudavillas.com",
-    siteName: "Thukkuguda Villas",
-    title: "Thukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
+    url: "https://tukkugudavillas.com",
+    siteName: "Tukkuguda Villas",
+    title: "Tukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
     description:
       "202 premium villas across 24 acres in Tukkuguda, South Hyderabad. Plots from 267–400 Sq. Yds with 40-ft roads and grand clubhouse.",
     images: [
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Thukkuguda Villas — Premium Gated Community, Hyderabad",
+        alt: "Tukkuguda Villas — Premium Gated Community, Hyderabad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
+    title: "Tukkuguda Villas | Premium Gated Villa Community | Tukkuguda, Hyderabad",
     description:
       "202 premium villas across 24 acres in Tukkuguda, South Hyderabad.",
     images: ["/images/og-image.jpg"],

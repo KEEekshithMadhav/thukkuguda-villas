@@ -5,9 +5,9 @@ import PhoneButtons from '@/components/ui/PhoneButtons';
 import { projectData } from '@/data/project';
 
 export const metadata: Metadata = {
-  title: 'Contact Sales & Site Visits | Thukkuguda Villas – Hyderabad',
+  title: 'Contact Sales & Site Visits | Tukkuguda Villas – Hyderabad',
   description:
-    'Connect with the Thukkuguda Villas sales desk. Call +91 98858 58529 or +91 85858 54853, WhatsApp our relationship managers, or submit an enquiry.',
+    'Connect with the Tukkuguda Villas sales desk. Call +91 98858 58529 or +91 85858 54853, WhatsApp our relationship managers, or submit an enquiry.',
 };
 
 interface ContactPageProps {
