@@ -4,7 +4,7 @@ import { Phone, MessageCircle, MapPin } from 'lucide-react';
 import { projectData } from '@/data/project';
 
 const Footer: React.FC = () => {
-  const { phone1, phone2 } = projectData;
+  const { phone1, phone2, phone3 } = projectData;
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -98,6 +98,29 @@ const Footer: React.FC = () => {
                   </a>
                   <a
                     href={phone2.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                    aria-label="WhatsApp"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone 3 */}
+              <div>
+                <p className="text-[10px] text-white/30 uppercase tracking-wide mb-1.5">Site Visits &amp; Enquiries</p>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={phone3.tel}
+                    className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
+                  >
+                    <Phone className="w-3 h-3" />
+                    {phone3.display}
+                  </a>
+                  <a
+                    href={phone3.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-emerald-400 hover:text-emerald-300 transition-colors"

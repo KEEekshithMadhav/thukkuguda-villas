@@ -27,5 +27,10 @@ export const projectData = {
     tel: "tel:+918585854853",
     whatsapp: "https://wa.me/918585854853",
   },
+  phone3: {
+    display: "+91 85018 38585",
+    tel: "tel:+918501838585",
+    whatsapp: "https://wa.me/918501838585",
+  },
   address: "Tukkuguda (Mankhal), South Hyderabad, Telangana, India",
 };

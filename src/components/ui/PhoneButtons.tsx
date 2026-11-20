@@ -15,8 +15,8 @@ const PhoneButtons: React.FC<PhoneButtonsProps> = ({
   size = 'md',
   light = false,
 }) => {
-  const { phone1, phone2 } = projectData;
-  const phones = [phone1, phone2];
+  const { phone1, phone2, phone3 } = projectData;
+  const phones = [phone1, phone2, phone3];
 
   const layoutClass = layout === 'row' ? 'flex-row flex-wrap' : 'flex-col';
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm';

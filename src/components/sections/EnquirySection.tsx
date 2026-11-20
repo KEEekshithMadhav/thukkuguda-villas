@@ -5,7 +5,7 @@ import EnquiryForm from '@/components/ui/EnquiryForm';
 import { projectData } from '@/data/project';
 
 const EnquirySection: React.FC = () => {
-  const { phone1, phone2 } = projectData;
+  const { phone1, phone2, phone3 } = projectData;
 
   return (
     <section className="bg-stone py-20 md:py-28">
@@ -23,7 +23,7 @@ const EnquirySection: React.FC = () => {
             <div className="mt-8 space-y-4">
               <p className="text-xs uppercase tracking-[0.2em] text-taupe font-body font-medium mb-3">Call or WhatsApp</p>
 
-              {[phone1, phone2].map((phone) => (
+              {[phone1, phone2, phone3].map((phone) => (
                 <div key={phone.tel} className="flex items-center justify-between py-3 border-b border-softgrey/60">
                   <a
                     href={phone.tel}

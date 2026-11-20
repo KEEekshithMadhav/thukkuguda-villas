@@ -6,7 +6,7 @@ import { projectData } from '@/data/project';
 
 const FloatingContact: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { phone1, phone2 } = projectData;
+  const { phone1, phone2, phone3 } = projectData;
 
   return (
     <div className="fixed bottom-6 right-5 z-50 flex flex-col items-end gap-2">
@@ -15,8 +15,8 @@ const FloatingContact: React.FC = () => {
         <div className="bg-white border border-softgrey shadow-lg rounded-lg p-4 w-64 mb-1">
           <p className="text-[10px] uppercase tracking-[0.2em] text-taupe font-medium mb-3">Get in Touch</p>
 
-          {[phone1, phone2].map((phone, i) => (
-            <div key={phone.tel} className={`flex items-center justify-between py-2 ${i === 0 ? 'border-b border-softgrey mb-2' : ''}`}>
+          {[phone1, phone2, phone3].map((phone, i) => (
+            <div key={phone.tel} className={`flex items-center justify-between py-2 ${i < 2 ? 'border-b border-softgrey mb-2' : ''}`}>
               <a href={phone.tel} className="text-sm text-charcoal hover:text-taupe transition-colors font-medium">
                 {phone.display}
               </a>
