@@ -18,19 +18,14 @@ export const projectData = {
     "Low-Density Gated Living",
   ],
   phone1: {
-    display: "+91 98858 58529",
-    tel: "tel:+919885858529",
-    whatsapp: "https://wa.me/919885858529",
-  },
-  phone2: {
-    display: "+91 85858 54853",
-    tel: "tel:+918585854853",
-    whatsapp: "https://wa.me/918585854853",
-  },
-  phone3: {
     display: "+91 85018 38585",
     tel: "tel:+918501838585",
     whatsapp: "https://wa.me/918501838585",
+  },
+  phone2: {
+    display: "+91 98858 58529",
+    tel: "tel:+919885858529",
+    whatsapp: "https://wa.me/919885858529",
   },
   address: "Tukkuguda (Mankhal), South Hyderabad, Telangana, India",
 };

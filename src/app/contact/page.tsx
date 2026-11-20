@@ -7,7 +7,7 @@ import { projectData } from '@/data/project';
 export const metadata: Metadata = {
   title: 'Contact Sales & Site Visits | Tukkuguda Villas – Hyderabad',
   description:
-    'Connect with the Tukkuguda Villas sales desk. Call +91 98858 58529, +91 85858 54853, or +91 85018 38585, WhatsApp our relationship managers, or submit an enquiry.',
+    'Connect with the Tukkuguda Villas sales desk. Call +91 85018 38585 or +91 98858 58529, WhatsApp our relationship managers, or submit an enquiry.',
 };
 
 interface ContactPageProps {
@@ -15,7 +15,7 @@ interface ContactPageProps {
 }
 
 export default function ContactPage({ searchParams }: ContactPageProps) {
-  const { phone1, phone2, phone3, address } = projectData;
+  const { phone1, phone2, address } = projectData;
   const initialVillaSize = searchParams?.size;
 
   return (
@@ -85,7 +85,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             {/* WhatsApp buttons */}
             <div className="space-y-3">
               <p className="text-[11px] uppercase tracking-[0.2em] text-taupe font-body font-medium">Quick WhatsApp</p>
-              {[phone1, phone2, phone3].map((phone) => (
+              {[phone1, phone2].map((phone) => (
                 <a
                   key={phone.tel}
                   href={phone.whatsapp}

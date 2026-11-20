@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { phone1, phone2, phone3 } = projectData;
+  const { phone1, phone2 } = projectData;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,12 +84,12 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href={phone3.tel}
+              href={phone2.tel}
               className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-charcoal/70 hover:text-charcoal border border-softgrey hover:border-charcoal/40 transition-all duration-200 rounded"
-              title={`Call: ${phone3.display}`}
+              title={`Call: ${phone2.display}`}
             >
               <Phone className="w-3 h-3 text-taupe" />
-              <span>{phone3.display}</span>
+              <span>{phone2.display}</span>
             </a>
 
             <a
@@ -187,24 +187,6 @@ export const Navbar: React.FC = () => {
                   <Phone className="w-3.5 h-3.5" />
                 </a>
                 <a href={phone2.whatsapp} target="_blank" rel="noopener noreferrer" className="p-2 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
-                  <MessageCircle className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Phone 3 */}
-            <div className="flex items-center justify-between p-3 rounded-sm bg-offwhite border border-softgrey">
-              <div>
-                <p className="text-[10px] text-taupe uppercase tracking-wide mb-0.5">Line 3</p>
-                <a href={phone3.tel} className="text-sm font-medium text-charcoal hover:text-taupe">
-                  {phone3.display}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <a href={phone3.tel} className="p-2 rounded bg-charcoal/5 text-charcoal hover:bg-charcoal hover:text-white transition-all" title="Call">
-                  <Phone className="w-3.5 h-3.5" />
-                </a>
-                <a href={phone3.whatsapp} target="_blank" rel="noopener noreferrer" className="p-2 rounded bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all" title="WhatsApp">
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
               </div>

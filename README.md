@@ -161,8 +161,8 @@ public/
 
 ## Contact Information
 
-- **Phone 1:** +91 98858 58529
-- **Phone 2:** +91 85858 54853
+- **Phone 1:** +91 85018 38585
+- **Phone 2:** +91 98858 58529
 - **Email:** info@tukkugudavillas.com
 - **Address:** Tukkuguda (Mankhal), South Hyderabad, Telangana – 501 359
 

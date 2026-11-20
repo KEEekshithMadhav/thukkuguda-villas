@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  const { phone1, phone2, phone3 } = projectData;
+  const { phone1, phone2 } = projectData;
 
   return (
     <div className="min-h-screen bg-offwhite text-charcoal pt-16 font-body">
@@ -101,12 +101,6 @@ export default function TermsPage() {
                 Phone Line 2:{' '}
                 <a href={phone2.tel} className="text-charcoal underline underline-offset-2 hover:text-taupe transition-colors">
                   {phone2.display}
-                </a>
-              </p>
-              <p>
-                Phone Line 3:{' '}
-                <a href={phone3.tel} className="text-charcoal underline underline-offset-2 hover:text-taupe transition-colors">
-                  {phone3.display}
                 </a>
               </p>
               <p className="text-charcoal/50">Location: Tukkuguda (Mankhal), South Hyderabad, Telangana, India</p>
