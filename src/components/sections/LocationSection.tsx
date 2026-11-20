@@ -16,7 +16,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 const LocationSection: React.FC = () => {
   return (
-    <section className="bg-offwhite py-20 md:py-28">
+    <section className="bg-white border-t border-softgrey py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Master Connectivity Map column */}

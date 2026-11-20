@@ -5,7 +5,6 @@ import Highlights from '@/components/sections/Highlights';
 import VillaExplorer from '@/components/sections/VillaExplorer';
 import MasterPlan from '@/components/sections/MasterPlan';
 import Amenities from '@/components/sections/Amenities';
-import ArchitecturalGallery from '@/components/sections/ArchitecturalGallery';
 import LocationSection from '@/components/sections/LocationSection';
 import EnquirySection from '@/components/sections/EnquirySection';
 
@@ -30,13 +29,10 @@ export default function HomePage() {
       {/* 6. Amenities */}
       <Amenities />
 
-      {/* 7. Architectural Gallery */}
-      <ArchitecturalGallery />
-
-      {/* 8. Location & Connectivity */}
+      {/* 7. Location & Connectivity */}
       <LocationSection />
 
-      {/* 9. Enquiry Section */}
+      {/* 8. Enquiry Section */}
       <EnquirySection />
     </>
   );
